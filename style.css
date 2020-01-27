@@ -19,6 +19,10 @@
 	src: url('fonts/Recursive_VF_1.034--subset_range_english_basic.woff2');
 }
 
+:root {
+	--pad: 2.5vw;
+}
+
 html {
 	box-sizing: border-box;
 	font-family: 'Inter1', fantasy;
@@ -30,11 +34,11 @@ html {
 
 body {
 	margin: 0;
-	padding: 2vw;
 	width: 100vw;
 }
 
 main {
+	padding: 2vw;
 	margin: 0 auto;
 }
 
@@ -59,7 +63,7 @@ a {
 }
 
 .test-text {
-	font-size: 1.25em;
+	font-size: 2rem;
 }
 
 .positive-oblique, .results {
@@ -109,4 +113,15 @@ hr {
 
 .var-slnt {
 	font-variation-settings: 'slnt' -10;
+}
+
+/* footer */
+
+footer {
+	width: 100vw;
+	padding: var(--pad);
+	background: black;
+	color: #ccc;
+	display: flex;
+	justify-content: space-between;
 }
