@@ -21,6 +21,7 @@
 
 html {
 	box-sizing: border-box;
+	font-family: 'Inter1', fantasy;
 }
 
 *, *:before, *:after {
@@ -29,7 +30,7 @@ html {
 
 body {
 	margin: 0;
-	padding: 2rem;
+	padding: 2vw;
 	width: 100vw;
 }
 
@@ -38,17 +39,23 @@ main {
 }
 
 h1 {
-	font-family: 'RecVF', monospace;
-	font-weight: 1000;
+	font-weight: 900;
 	font-variation-settings: 'CASL' 1;
+}
+
+p, li {
+	max-width: 70ch;
+	line-height: 1.5;
+}
+
+a {
+	color: inherit;
 }
 
 .tests {
 	display: grid;
-	/* grid-template-columns: 1fr 1fr; */
-	/* grid-template-columns: repeat(2, minmax(400px, auto)); */
 	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-	grid-gap: 2rem;
+	grid-gap: 2vw;
 }
 
 .test-text {
@@ -67,7 +74,7 @@ pre {
 	padding: 0.5em;
 }
 
-h2 code, p code {
+h1 code, h2 code, h3 code, p code, li code {
 	padding: 0 0.125em;
 }
 
@@ -75,11 +82,18 @@ code, pre {
 	font-family: 'RecVF', monospace;
 	font-variation-settings: 'MONO' 1, 'CASL' 1;
 	font-size: 0.95em;
-	background: #f3f3f3;
+	background: #f3f3ff;
 	box-sizing: border-box;
-	tab-size: 2;
 	overflow-x: auto;
 }
+
+hr {
+	margin: 5rem 0;
+	border: none;
+	border-top: 1px solid #888;
+}
+
+/* test CSS */
 
 .italic {
 	font-style: italic;

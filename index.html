@@ -11,7 +11,15 @@
 
 	<main>
 
-	<h1>VF Slant Test</h1>
+	<h1>Browser Test: <code>font-style: oblique XXdeg</code> & variable font Slant axis</h1>
+
+	<h2>Expected behavior</h2>
+
+	<p>
+		Per the <a href="https://drafts.csswg.org/css-fonts-4/#font-style-prop">CSS Spec: Fonts Module Level 4, font-style</a>, variable fonts with a Slant axis with negative values should be possible to control via CSS with a positive value of oblique. That is, CSS such as <code>font-style: oblique 10deg;</code> should result in clockwise-slanting text when the font has a slnt axis with values 0 to -10.
+	</p>
+
+	
 
 	<div class="tests">
 
@@ -20,10 +28,10 @@
 		<code>
 			<pre>
 @font-face {
-	font-family: 'Inter1';
-	font-weight: 100 900;
-	font-style: oblique 0deg 10deg; /* follows CSS spec */
-	src: url('fonts/Inter.var.ttf');
+  font-family: 'Inter1';
+  font-weight: 100 900;
+  font-style: oblique 0deg 10deg; /* follows CSS spec */
+  src: url('fonts/Inter.var.ttf');
 }</pre>
 		</code>
 		<div class="test-text">
@@ -40,10 +48,10 @@
 		<code>
 			<pre>
 @font-face {
-	font-family: 'Inter2';
-	font-weight: 100 900;
-	font-style: oblique 0deg -10deg; /* testing a different way */
-	src: url('fonts/Inter.var.ttf');
+  font-family: 'Inter2';
+  font-weight: 100 900;
+  font-style: oblique 0deg -10deg; /* testing a different way */
+  src: url('fonts/Inter.var.ttf');
 }</pre>
 		</code>
 		<div class="test-text">
@@ -57,9 +65,18 @@
 
 </div>
 
+<hr>
+
 <div class="results">
 	<h2>Results as of Jan 27, 2020</h2>
-	<a href="https://drafts.csswg.org/css-fonts-4/#font-style-prop">CSS Spec: Fonts Module Level 4, font-style</a>
+	All tested browsers support <code>font-variation-settings: 'slnt' -10</code>, but support for <code>font-style: oblique XXdeg</code> is much worse:
+	<ul>
+		<li><b>Firefox (72.0a1, 72.0.2):</b> closest to support, but only shows clockwise slant for a *negative* oblique value (opposite of what should happen, per CSS spec)</li>
+		<li><b>Chrome (81.0.4040.0):</b> No support.</li>
+		<li><b>Safari (13.2, WebKit 15610.1.1):</b> No support.</li>
+	</ul>
+
+	
 </div>
 
 </main>
