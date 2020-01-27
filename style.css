@@ -106,6 +106,9 @@ hr {
 .oblique {
 	font-style: oblique 10deg;
 }
+.oblique-only {
+	font-style: oblique;
+}
 
 .oblique-neg {
 	font-style: oblique -10deg;
