@@ -45,6 +45,7 @@ main {
 h1 {
 	font-weight: 900;
 	font-variation-settings: 'CASL' 1;
+	margin: calc(2 * var(--pad)) 0;
 }
 
 p, li {
