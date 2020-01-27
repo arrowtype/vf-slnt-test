@@ -1,0 +1,98 @@
+@font-face {
+	font-family: 'Inter1';
+	font-weight: 100 900;
+	font-style: oblique 0deg 10deg;
+	src: url('fonts/Inter.var.ttf');
+}
+
+@font-face {
+	font-family: 'Inter2';
+	font-weight: 100 900;
+	font-style: oblique 0deg -10deg;
+	src: url('fonts/Inter.var.ttf');
+}
+
+@font-face {
+	font-family: 'RecVF';
+	font-weight: 300 1000;
+	font-style: oblique 0deg 15deg;
+	src: url('fonts/Recursive_VF_1.034--subset_range_english_basic.woff2');
+}
+
+html {
+	box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+body {
+	margin: 0;
+	padding: 2rem;
+	width: 100vw;
+}
+
+main {
+	margin: 0 auto;
+}
+
+h1 {
+	font-family: 'RecVF', monospace;
+	font-weight: 1000;
+	font-variation-settings: 'CASL' 1;
+}
+
+.tests {
+	display: grid;
+	/* grid-template-columns: 1fr 1fr; */
+	/* grid-template-columns: repeat(2, minmax(400px, auto)); */
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	grid-gap: 2rem;
+}
+
+.test-text {
+	font-size: 1.25em;
+}
+
+.positive-oblique, .results {
+	font-family: 'Inter1', fantasy;
+}
+
+.negative-oblique {
+	font-family: 'Inter2', fantasy;
+}
+
+pre {
+	padding: 0.5em;
+}
+
+h2 code, p code {
+	padding: 0 0.125em;
+}
+
+code, pre {
+	font-family: 'RecVF', monospace;
+	font-variation-settings: 'MONO' 1, 'CASL' 1;
+	font-size: 0.95em;
+	background: #f3f3f3;
+	box-sizing: border-box;
+	tab-size: 2;
+	overflow-x: auto;
+}
+
+.italic {
+	font-style: italic;
+}
+
+.oblique {
+	font-style: oblique 10deg;
+}
+
+.oblique-neg {
+	font-style: oblique -10deg;
+}
+
+.var-slnt {
+	font-variation-settings: 'slnt' -10;
+}

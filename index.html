@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>VF Slant Test</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+	<main>
+
+	<h1>VF Slant Test</h1>
+
+	<div class="tests">
+
+	<div class="positive-oblique">
+		<h2>Positive Oblique in <code>@font-face</code></h2>		
+		<code>
+			<pre>
+@font-face {
+	font-family: 'Inter1';
+	font-weight: 100 900;
+	font-style: oblique 0deg 10deg; /* follows CSS spec */
+	src: url('fonts/Inter.var.ttf');
+}</pre>
+		</code>
+		<div class="test-text">
+			<i>&lt;i&gt;</i>
+			<p class="italic">font-style: italic;</p>
+			<p class="oblique">font-style: oblique 10deg;</p>
+			<p class="oblique-neg">font-style: oblique -10deg;</p>
+			<p class="var-slnt">font-variation-settings: 'slnt' -10;</p>
+		</div>
+	</div>
+
+	<div class="negative-oblique">
+		<h2>Negative Oblique in <code>@font-face</code></h2>		
+		<code>
+			<pre>
+@font-face {
+	font-family: 'Inter2';
+	font-weight: 100 900;
+	font-style: oblique 0deg -10deg; /* testing a different way */
+	src: url('fonts/Inter.var.ttf');
+}</pre>
+		</code>
+		<div class="test-text">
+			<i>&lt;i&gt;</i>
+			<p class="italic">font-style: italic;</p>
+			<p class="oblique">font-style: oblique 10deg;</p>
+			<p class="oblique-neg">font-style: oblique -10deg;</p>
+			<p class="var-slnt">font-variation-settings: 'slnt' -10;</p>
+		</div>
+	</div>
+
+</div>
+
+<div class="results">
+	<h2>Results as of Jan 27, 2020</h2>
+	<a href="https://drafts.csswg.org/css-fonts-4/#font-style-prop">CSS Spec: Fonts Module Level 4, font-style</a>
+</div>
+
+</main>
+	
+</body>
+</html>
