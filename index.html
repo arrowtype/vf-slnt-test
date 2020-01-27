@@ -35,7 +35,7 @@
   font-style: oblique 0deg 10deg; /* follows CSS spec */
   src: url('fonts/Inter.var.ttf');
 }</pre>
-		<p>Expectation: all following elements should be forward-slanted (clockwise-sloped), except for <code>font-style: oblique -10deg;</code></p>
+		<p>All following elements should be forward-slanted (clockwise-sloped), except for <code>font-style: oblique -10deg;</code></p>
 		<div class="test-text">
 			<p class="var-slnt">font-variation-settings: 'slnt' -10;</p>
 			<p class="oblique-only">font-style: oblique;</p>
@@ -55,7 +55,7 @@
   font-style: oblique 0deg -10deg; /* testing a different way */
   src: url('fonts/Inter.var.ttf');
 }</pre>
-		<p>Expectation: the above code should only apply to a “backslanted” font with a Slant axis of 0 to positive 10. It is only here as an alternative test case to show a current issue in Firefox.</code></p>
+		<p>The above code should only apply to a “backslanted” font with a counter-clockwise Slant axis of 0 to positive 10. In a font with a clockwise-slant, the font-style declaration above is incorrect.</p>
 		<div class="test-text">
 			<p class="var-slnt">font-variation-settings: 'slnt' -10;</p>
 			<p class="oblique-only">font-style: oblique;</p>
