@@ -27,7 +27,7 @@
 	<div class="tests">
 
 	<div class="positive-oblique">
-		<h2>Test: positive oblique in <code>@font-face</code></h2>		
+		<h2>Test: positive oblique in <code>@font-face</code></h2>
 			<pre>
 @font-face {
   font-family: 'Inter1';
@@ -35,18 +35,19 @@
   font-style: oblique 0deg 10deg; /* follows CSS spec */
   src: url('fonts/Inter.var.ttf');
 }</pre>
+		<p>Expectation: all following elements should be forward-slanted (clockwise-sloped), except for <code>font-style: oblique -10deg;</code></p>
 		<div class="test-text">
 			<p class="var-slnt">font-variation-settings: 'slnt' -10;</p>
 			<p class="oblique-only">font-style: oblique;</p>
 			<p class="oblique">font-style: oblique 10deg;</p>
-			<p class="oblique-neg">font-style: oblique -10deg;</p>
 			<p class="italic">font-style: italic;</p>
 			<i>&lt;i&gt;</i>
+			<p class="oblique-neg">font-style: oblique -10deg;</p>
 		</div>
 	</div>
 
 	<div class="negative-oblique">
-		<h2>Test: negative oblique in <code>@font-face</code></h2>		
+		<h2>Test: negative oblique in <code>@font-face</code></h2>
 			<pre>
 @font-face {
   font-family: 'Inter2';
@@ -54,13 +55,14 @@
   font-style: oblique 0deg -10deg; /* testing a different way */
   src: url('fonts/Inter.var.ttf');
 }</pre>
+		<p>Expectation: the above code should only apply to a “backslanted” font with a Slant axis of 0 to positive 10. It is only here as an alternative test case to show a current issue in Firefox.</code></p>
 		<div class="test-text">
 			<p class="var-slnt">font-variation-settings: 'slnt' -10;</p>
 			<p class="oblique-only">font-style: oblique;</p>
 			<p class="oblique">font-style: oblique 10deg;</p>
-			<p class="oblique-neg">font-style: oblique -10deg;</p>
 			<p class="italic">font-style: italic;</p>
 			<i>&lt;i&gt;</i>
+			<p class="oblique-neg">font-style: oblique -10deg;</p>
 		</div>
 	</div>
 
