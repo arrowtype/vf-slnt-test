@@ -75,6 +75,10 @@ a {
 	font-size: 2rem;
 }
 
+.test-expectation {
+	min-height: 4em;
+}
+
 .positive-oblique, .results {
 	font-family: 'Inter1', fantasy;
 }
