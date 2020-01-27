@@ -24,7 +24,7 @@
 	<div class="tests">
 
 	<div class="positive-oblique">
-		<h2>Positive Oblique in <code>@font-face</code></h2>		
+		<h2>Test: positive oblique in <code>@font-face</code></h2>		
 		<code>
 			<pre>
 @font-face {
@@ -44,7 +44,7 @@
 	</div>
 
 	<div class="negative-oblique">
-		<h2>Negative Oblique in <code>@font-face</code></h2>		
+		<h2>Test: negative oblique in <code>@font-face</code></h2>		
 		<code>
 			<pre>
 @font-face {
@@ -71,9 +71,9 @@
 	<h2>Results as of Jan 27, 2020</h2>
 	All tested browsers support <code>font-variation-settings: 'slnt' -10</code>, but support for <code>font-style: oblique XXdeg</code> is much worse:
 	<ul>
-		<li><b>Firefox (72.0a1, 72.0.2):</b> closest to support, but only shows clockwise slant for a *negative* oblique value (opposite of what should happen, per CSS spec)</li>
 		<li><b>Chrome (81.0.4040.0):</b> No support.</li>
 		<li><b>Safari (13.2, WebKit 15610.1.1):</b> No support.</li>
+		<li><b>Firefox (72.0a1, 72.0.2):</b> closest to support, but only shows clockwise slant for a *negative* oblique value (opposite of what should happen, per CSS spec)</li>
 	</ul>
 
 	
@@ -82,8 +82,8 @@
 </main>
 
 <footer>
-	<p>Fonts: <a href="github.com/rsms/inter">Inter</a> & <a href="github.com/arrowtype/recursive">Recursive</a></p>
-	<p>Source: <a href="https://github.com/arrowtype/vf-slnt-test">https://github.com/arrowtype/vf-slnt-test</a></p>
+	<p>Test source: <a href="https://github.com/arrowtype/vf-slnt-test">https://github.com/arrowtype/vf-slnt-test</a></p>
+	<p class="colophon">Fonts: <a href="github.com/rsms/inter">Inter</a> & <a href="github.com/arrowtype/recursive">Recursive</a></p>
 
 </footer>
 	

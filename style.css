@@ -38,7 +38,7 @@ body {
 }
 
 main {
-	padding: 2vw;
+	padding: var(--pad);
 	margin: 0 auto;
 }
 
@@ -59,7 +59,7 @@ a {
 .tests {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-	grid-gap: 2vw;
+	grid-gap: var(--pad);
 }
 
 .test-text {
@@ -122,6 +122,11 @@ footer {
 	padding: var(--pad);
 	background: black;
 	color: #ccc;
-	display: flex;
-	justify-content: space-between;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	grid-gap: var(--pad);
+}
+
+.colophon {
+	color: #888;
 }
