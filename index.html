@@ -12,10 +12,13 @@
 	<main>
 
 	<div class="centered-col">
-		<h1>Browser Test: <code>font-style: oblique</code> for variable font with Slant axis</h1>
+		<h1>Browser Test: <code>font-style</code> for variable font with Slant axis</h1>
 		<h2>Expected behavior</h2>
 		<p>
-			Per the <a href="https://drafts.csswg.org/css-fonts-4/#font-style-prop">CSS Spec: Fonts Module Level 4, font-style</a>, variable fonts with a Slant axis with negative values should be possible to control via CSS with a positive value of oblique. For example, CSS such as <code>font-style: oblique 10deg;</code> should result in clockwise-slanting text when the font has a slnt axis with values 0 to -10 (as required by <a href="https://docs.microsoft.com/en-us/typography/opentype/spec/dvaraxistag_slnt">the OpenType spec</a>: “a typical, right-leaning oblique design will have a negative slant value”).
+			Variable fonts with negative, clockwise-sloping Slant axis values should be possible to control via CSS with a positive value of oblique (<a href="https://drafts.csswg.org/css-fonts-4/#font-style-prop">CSS Spec, font-style</a>). For example, CSS such as <code>font-style: oblique 10deg;</code> should result in clockwise-slanting text when the font has a slnt axis with values 0 to -10 (as required by <a href="https://docs.microsoft.com/en-us/typography/opentype/spec/dvaraxistag_slnt">the OpenType spec</a>: “a typical, right-leaning oblique design will have a negative slant value”).
+		</p>
+		<p>
+			Additionally, <code>font-style:italic</code> should activate the Slant axis if an Italic axis is not present. <a href="https://drafts.csswg.org/css-fonts-4/#valdef-font-style-italic">Per the CSS Spec</a>: “Italic: Matches against a font that is labeled as an italic face, or an oblique face if one does not exist ...For TrueType / OpenType fonts that use variations, the slnt variation is used to implement oblique values” 
 		</p>
 	</div>
 
@@ -77,7 +80,7 @@
 	</ul>
 
 	<p>
-		Note: both Chrome and FireFox appear to work well if a variable font has a clockwise slant with a *positive* value; however, fonts using this approach are contradicting the OpenType spec and therefore do not provide a valid usecase.
+		Note: both Chrome and FireFox appear to work well if a variable font has a clockwise slant with a *positive* value; however, fonts using this approach contradict the OpenType spec and therefore do not provide a valid test case.
 	</p>
 
 	
