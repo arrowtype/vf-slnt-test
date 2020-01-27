@@ -85,7 +85,8 @@ h1 code, h2 code, h3 code, p code, li code {
 code, pre {
 	font-family: 'RecVF', monospace;
 	font-variation-settings: 'MONO' 1, 'CASL' 1;
-	background: #f3f3ff;
+	border-radius: 0.125em;
+	background: #dcecff;
 	box-sizing: border-box;
 	overflow-x: auto;
 }
