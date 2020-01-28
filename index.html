@@ -23,9 +23,9 @@
 		<h2>Test: positive oblique in <code>@font-face</code></h2>
 			<pre>
 @font-face {
-  font-family: 'Inter';             <slnt class="comment">/* slnt axis of 0 to -10, per OT spec */</slnt>
+  font-family: 'Inter';           <slnt class="comment">/* has negative slnt values, per OT spec */</slnt>
   font-weight: 100 900;
-  font-style: oblique 0deg 10deg;   <slnt class="comment">/* follows CSS spec */</slnt>
+  font-style: oblique 0deg 10deg; <slnt class="comment">/* has positive top value, per CSS spec */</slnt>
   src: url('fonts/Inter.var.ttf');
 }</pre>
 		<p class="test-expectation">All following elements should be clockwise-slanted (“forward-leaning”), except for <code>font-style: oblique -10deg;</code>, which provides a value outside the font's Slant axis range.</p>
