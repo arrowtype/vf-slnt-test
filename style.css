@@ -58,22 +58,27 @@ a {
 }
 
 .centered-col {
-	margin: 0 auto;
+	margin: 5rem auto;
 	max-width: 760px;
 }
 
-.tests {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-	grid-gap: var(--pad);
-	margin: calc(2 * var(--pad)) 0;
-	padding: calc(2 * var(--pad)) 0;
-	border-top: 1px solid #888;
-	border-bottom: 1px solid #888;
+.test-text {
+	font-size: 3rem;
 }
 
-.test-text {
-	font-size: 2rem;
+.test-note {
+	font-family: 'RecVF', sans-serif;
+	font-size: 0.5em;
+	font-weight: 400;
+	font-variation-settings: 'slnt' -15, 'CASL' 1;
+	color: red;
+	font-size: 0.325em;
+	color: #22f;
+	margin-top: calc(-1.25 * var(--pad));
+}
+
+.wrong {
+	color:#aa2222;
 }
 
 .test-expectation {
@@ -100,9 +105,18 @@ code, pre {
 	font-family: 'RecVF', monospace;
 	font-variation-settings: 'MONO' 1, 'CASL' 1;
 	border-radius: 0.125em;
-	background: #dcecff;
+	background: #eeeeee;
 	box-sizing: border-box;
 	overflow-x: auto;
+}
+
+code {
+	background: #e8f3ff;
+}
+
+.comment {
+	font-variation-settings: 'MONO' 1, 'CASL' 1, 'slnt' -15;
+	color: #666;
 }
 
 
