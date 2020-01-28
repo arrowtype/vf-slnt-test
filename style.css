@@ -148,8 +148,12 @@ footer {
 	padding: var(--pad);
 	background: black;
 	color: #ccc;
+}
+
+footer .centered-col {
+	margin-top: 1rem;
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(350px, auto));
 	grid-gap: var(--pad);
 }
 
