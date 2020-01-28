@@ -19,7 +19,7 @@
 
 	<section class="tests centered-col">
 
-	<div class="positive-oblique">
+	<div class="positive-oblique centered-col">
 		<h2>Test: positive oblique in <code>@font-face</code></h2>
 			<pre>
 @font-face {
@@ -42,6 +42,32 @@
 			<p class="test-note">Should have a clockwise slant</p>
 			<p class="oblique-neg">font-style: oblique -10deg;</p>
 			<p class="test-note wrong">Incorrect for most fonts unless they include a “backslant”</p>
+		</div>
+	</div>
+
+	<div class="negative-oblique centered-col">
+		<h2>Test: negative oblique in <code>@font-face</code> <span class="wrong">(incorrect for most fonts)</span></h2>
+			<pre>
+@font-face {
+  font-family: 'Inter2';
+  font-weight: 100 900;
+  font-style: oblique 0deg -10deg; /* wrong for clockwise slant */
+  src: url('fonts/Inter.var.ttf');
+}</pre>
+		<p class="test-expectation">The above code should only apply to a “backslanted” font with a counter-clockwise Slant axis of 0 to (+)10. For a clockwise-slant, the font-style declaration above is incorrect.</p>
+		<div class="test-text">
+			<p class="var-slnt">font-variation-settings: 'slnt' -10;</p>
+			<p class="test-note">Should have a clockwise slant</p>
+			<p class="oblique-only">font-style: oblique;</p>
+			<p class="test-note">Should have a clockwise slant</p>
+			<p class="oblique">font-style: oblique 10deg;</p>
+			<p class="test-note">Should have a clockwise slant</p>
+			<p class="italic">font-style: italic;</p>
+			<p class="test-note">Should have a clockwise slant</p>
+			<p class="italic"><i>&lt;i&gt;</i></p>
+			<p class="test-note">Should have a clockwise slant</p>
+			<p class="oblique-neg">font-style: oblique -10deg;</p>
+			<p class="test-note wrong">Incorrect for clockwise-slanting font</p>
 		</div>
 	</div>
 
