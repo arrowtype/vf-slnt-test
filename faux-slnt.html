@@ -8,10 +8,6 @@
     <title>Faux Slant Test</title>
   </head>
   <style>
-    .centered-col {
-      margin: 5rem auto 0;
-      max-width: 760px;
-    }
     .big {
       font-size: 12vw;
       text-align: center;
@@ -50,6 +46,12 @@
     <main>
       <div class="centered-col">
         <h1>Faux Slant Test</h1>
+        <p>
+          In Safari (macOS & iOS), variable fonts with a Slant axis are given a “faux-slant.” Instead, their slnt axis should be activated. See the
+          <a href="https://drafts.csswg.org/css-fonts-4/#font-style-prop">CSS Spec for font-style</a> for details.
+        </p>
+      </div>
+      <div class="centered-col">
         <p class="italic red">font-style: italic; /* applies artificial skew */</p>
         <p class="var-slnt blue">font-variation-settings: 'slnt' -10; /* shows correct rendering */</p>
       </div>
@@ -66,12 +68,12 @@
         <p class="big italic red">o</p>
         <p class="big var-slnt blue">o</p>
       </div>
-	</main>
-	<footer>
-		<div class="centered-col">
-			<p>Test source: <a href="https://github.com/arrowtype/vf-slnt-test">github.com/arrowtype/vf-slnt-test</a></p>
-			<p class="colophon">Font: <a href="github.com/rsms/inter">Inter</a></p>
-		</div>
-	</footer>
+    </main>
+    <footer>
+      <div class="centered-col">
+        <p>Test source: <a href="https://github.com/arrowtype/vf-slnt-test">github.com/arrowtype/vf-slnt-test</a></p>
+        <p class="colophon">Font: <a href="github.com/rsms/inter">Inter</a></p>
+      </div>
+    </footer>
   </body>
 </html>
