@@ -57,6 +57,10 @@ a {
 	color: inherit;
 }
 
+.recursive {
+	font-family: 'RecVF', fantasy;
+}
+
 .centered-col {
 	margin: 5rem auto;
 	max-width: 760px;

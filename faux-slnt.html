@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Faux Slant Test</title>
+  </head>
+  <style>
+    .centered-col {
+      margin: 5rem auto 0;
+      max-width: 760px;
+    }
+    .big {
+      font-size: 12vw;
+      text-align: center;
+      width: 100%;
+    }
+    .red {
+      color: rgb(255, 0, 237);
+    }
+    .blue {
+      color: rgb(0, 104, 255);
+    }
+    .overlap {
+      position: relative;
+      margin-top: 0em;
+      height: 20vw;
+    }
+    .overlap p {
+      position: absolute;
+      top: 0;
+      margin: 0;
+      mix-blend-mode: multiply;
+    }
+
+    .overlap.big-o {
+      height: 55vw;
+    }
+    .overlap.big-o p {
+      font-size: 85vw;
+      line-height: 0.45em;
+    }
+    .overlap.big-o p:first-of-type {
+      left: -0.07em;
+    }
+  </style>
+  <body>
+    <main>
+      <div class="centered-col">
+        <h1>Faux Slant Test</h1>
+        <p class="italic red">font-style: italic; /* applies artificial skew */</p>
+        <p class="var-slnt blue">font-variation-settings: 'slnt' -10; /* shows correct rendering */</p>
+      </div>
+
+      <div class="overlap">
+        <p class="big italic red">hamburgfontsiv</p>
+        <p class="big var-slnt blue">hamburgfontsiv</p>
+      </div>
+      <div class="centered-col">
+        <p>Corrected X placement to compare curves:</p>
+      </div>
+
+      <div class="big-o overlap">
+        <p class="big italic red">o</p>
+        <p class="big var-slnt blue">o</p>
+      </div>
+	</main>
+	<footer>
+		<div class="centered-col">
+			<p>Test source: <a href="https://github.com/arrowtype/vf-slnt-test">github.com/arrowtype/vf-slnt-test</a></p>
+			<p class="colophon">Font: <a href="github.com/rsms/inter">Inter</a></p>
+		</div>
+	</footer>
+  </body>
+</html>
