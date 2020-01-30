@@ -51,6 +51,7 @@ h1 {
 p, li {
 	max-width: 70ch;
 	line-height: 1.5;
+	margin-bottom: 1em;
 }
 
 a {
@@ -72,11 +73,10 @@ a {
 
 .test-note {
 	font-family: 'RecVF', sans-serif;
-	font-size: 0.5em;
 	font-weight: 400;
-	font-variation-settings: 'slnt' -15, 'CASL' 1;
+	font-variation-settings: 'CASL' 1;
 	color: red;
-	font-size: 0.325em;
+	font-size: 0.25em;
 	color: #22f;
 	margin-top: calc(-1.25 * var(--pad));
 }
