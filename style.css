@@ -81,6 +81,12 @@ a {
 	margin-top: calc(-1.25 * var(--pad));
 }
 
+@media (min-width: 1200px) {
+	.test-note {
+		margin-top: calc(-0.5 * var(--pad));
+	}
+}
+
 .wrong {
 	color:#aa2222;
 }
