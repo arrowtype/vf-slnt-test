@@ -83,7 +83,8 @@ main {
 }
 
 h1 {
-	font-weight: 900;
+	font-family: 'RecVF', monospace;
+	font-weight: 1000;
 	font-variation-settings: 'CASL' 1;
 	margin: calc(2 * var(--pad)) 0;
 }
@@ -139,18 +140,24 @@ table ul {
 	padding-left: 0;
 }
 
+table .note {
+	max-width: 35ch;
+	font-size: 0.875em;
+}
+
 /* END table */
 
 /* browser test results */
 
 table li {
-	font-family: serif;
+	font-family: sans-serif;
 	display: inline-block;
 	padding-right: 0.5rem;
 }
 
 .browser-result {
 	margin: 0;
+	padding: 0;
 	list-style: none;
 }
 
@@ -183,6 +190,18 @@ table li {
 .browser-result .bad:before {
 	font-size: 1.5rem;
 	content: "✗";
+	padding-right: 0.275rem;
+}
+
+.browser-result .maybe {
+	color: gray;
+	list-style: none;
+	font-weight: 600;
+}
+.browser-result .maybe:before {
+	font-size: 1.5rem;
+	content: "?";
+	padding-right: 0.275rem;
 }
 
 /* END browser test results */

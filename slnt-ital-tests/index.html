@@ -22,20 +22,50 @@
 	</svg>
 	<main>
 		<div class="centered-col">
-			<h1>font-style tests</h1>
-			<p>lorem ipsum</p>
+			<h1>font-style tests (WIP)</h1>
+			<!-- <p>
+			Takeaways for CSS Spec, Fonts Level 4:
+			</p>
+			<ul>
+				<li>
+					It is currently unclear what behavior should occur for <code>font-style: oblique XXdeg</code> if a font lacks a <code>slnt</code> axis. 
+				</li>
+				<li>
+					Level 3 made it clear that <code>font-style:oblique</code> should select an italic face if an oblique one is not available. 
+				</li>
+			</ul> -->
+		</div>
+		<div class="centered-col">
+			<h2>Browsers tested (March 24, 2020)</h2>
+			<ul class="browser-result">
+				<li>
+					<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
+					Chrome Canary, Version 83.0.4094.0
+				</li>
+				<li>
+					<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-firefox"></use></svg>
+					Firefox Nightly, Version 76.0a1 (2020-03-23)
+				</li>
+				<li>
+					<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-safari"></use></svg>
+					Safari Technology Preview, Release 102 (Safari 13.2, WebKit 15610.1.5.2)
+				</li>
+			</ul>
 		</div>
 		<table>
 		<tr>
 			<th>Property/Declaration</th>
-			<th>Font w/ <code>slnt</code> axis only</th>
+			<th>Font w/ <code>slnt</code> axis, 0 to -15</th>
 			<th>Font w/ <code>ital</code> axis only</th>
 			<!-- <th>Font w/ <code>slnt</code> & <code>ital</code> axes</th> -->
-			<th>Font w/ <code>slnt</code> axis, -15 to 15</th>
+			<th>Font w/ <code>slnt</code> axis, 15 to -15</th>
 		</tr>
 		<tr>
 			<td>
 				<code>font-variation-settings</code>
+				<div class="note">
+					Low-level control of variable font axes. Works well in all modern browsers.
+				</div>
 			</td>
 			<td>
 				<code>'slnt' -15;</code>
@@ -103,125 +133,12 @@
 			</td>
 		</tr>
 		<tr>
-			<td><code>font-style: oblique;</code></td>
 			<td>
-				<span class="slnt" style="font-style: oblique;">argvfonts</span>
-				<ul class="browser-result">
-					<li class="good">
-						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
-					</li>
-					<li class="good">
-						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-firefox"></use></svg>
-					</li>
-					<li class="good">
-						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-safari"></use></svg>
-					</li>
-				</ul>
+				<code>font-style: italic;</code>
+				<div class="note">
+					"Matches against a font that is labeled as an italic face, or an oblique face if one does not exist." <a href="https://drafts.csswg.org/css-fonts-4/#font-style-prop">CSS Fonts 4</a>
+				</div>
 			</td>
-			<td class="ital">
-				<span class="ital" style="font-style: oblique;">argvfonts</span>
-				<ul class="browser-result">
-					<li class="bad">
-						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
-					</li>
-					<li class="good">
-						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-firefox"></use></svg>
-					</li>
-					<li class="good">
-						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-safari"></use></svg>
-					</li>
-				</ul>
-			</td>
-			<!-- <td>
-				<span class="slnt_ital" style="font-style: oblique;">argvfonts</span>
-				<ul class="browser-result">
-					<li class="good">
-						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
-					</li>
-					<li class="good">
-						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-firefox"></use></svg>
-					</li>
-					<li class="good">
-						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-safari"></use></svg>
-					</li>
-				</ul>
-			</td> -->
-			<td>
-				<span class="slnt_backslant" style="font-style: oblique;">argvfonts</span>
-				<ul class="browser-result">
-					<li class="good">
-						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
-					</li>
-					<li class="good">
-						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-firefox"></use></svg>
-					</li>
-					<li class="good">
-						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-safari"></use></svg>
-					</li>
-				</ul>
-			</td>
-		</tr>
-		<tr>
-			<td><code>font-style: oblique 10deg;</code></td>
-			<td>
-				<span class="slnt" style="font-style: oblique 10deg;">argvfonts</span>
-				<ul class="browser-result">
-					<li class="good">
-						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
-					</li>
-					<li class="good">
-						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-firefox"></use></svg>
-					</li>
-					<li class="good">
-						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-safari"></use></svg>
-					</li>
-				</ul>
-			</td>
-			<td class="ital">
-				<span class="ital" style="font-style: oblique 10deg;">argvfonts</span>
-				<ul class="browser-result">
-					<li class="bad">
-						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
-					</li>
-					<li class="good">
-						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-firefox"></use></svg>
-					</li>
-					<li class="good">
-						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-safari"></use></svg>
-					</li>
-				</ul>
-			</td>
-			<!-- <td>
-				<span class="slnt_ital" style="font-style: oblique 10deg;">argvfonts</span>
-				<ul class="browser-result">
-					<li class="good">
-						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
-					</li>
-					<li class="good">
-						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-firefox"></use></svg>
-					</li>
-					<li class="good">
-						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-safari"></use></svg>
-					</li>
-				</ul>
-			</td> -->
-			<td>
-				<span class="slnt_backslant" style="font-style: oblique 10deg;">argvfonts</span>
-				<ul class="browser-result">
-					<li class="good">
-						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
-					</li>
-					<li class="good">
-						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-firefox"></use></svg>
-					</li>
-					<li class="good">
-						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-safari"></use></svg>
-					</li>
-				</ul>
-			</td>
-		</tr>
-		<tr>
-			<td><code>font-style: italic;</code></td>
 			<td>
 				<span class="slnt" style="font-style: italic;">argvfonts</span>
 				<ul class="browser-result">
@@ -231,7 +148,7 @@
 					<li class="good">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-firefox"></use></svg>
 					</li>
-					<li class="good">
+					<li class="bad">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-safari"></use></svg>
 					</li>
 				</ul>
@@ -245,7 +162,7 @@
 					<li class="good">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-firefox"></use></svg>
 					</li>
-					<li class="good">
+					<li class="bad">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-safari"></use></svg>
 					</li>
 				</ul>
@@ -273,14 +190,146 @@
 					<li class="good">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-firefox"></use></svg>
 					</li>
-					<li class="good">
+					<li class="bad">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-safari"></use></svg>
 					</li>
 				</ul>
 			</td>
 		</tr>
 		<tr>
-			<td><code>&lt;i&gt;</code></td>
+			<td><code>font-style: oblique;</code>
+				<div class="note">
+					"Selects a font that is labeled as an oblique face, or an italic face if one is not." <a href="https://drafts.csswg.org/css-fonts-3/#font-style-prop">CSS&nbsp;fonts&nbsp;3</a>
+				</div>
+			</td>
+			<td>
+				<span class="slnt" style="font-style: oblique;">argvfonts</span>
+				<ul class="browser-result">
+					<li class="good">
+						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
+					</li>
+					<li class="good">
+						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-firefox"></use></svg>
+					</li>
+					<li class="bad">
+						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-safari"></use></svg>
+					</li>
+				</ul>
+			</td>
+			<td class="ital">
+				<span class="ital" style="font-style: oblique;">argvfonts</span>
+				<ul class="browser-result">
+					<li class="bad">
+						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
+					</li>
+					<li class="bad">
+						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-firefox"></use></svg>
+					</li>
+					<li class="bad">
+						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-safari"></use></svg>
+					</li>
+				</ul>
+			</td>
+			<!-- <td>
+				<span class="slnt_ital" style="font-style: oblique;">argvfonts</span>
+				<ul class="browser-result">
+					<li class="good">
+						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
+					</li>
+					<li class="good">
+						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-firefox"></use></svg>
+					</li>
+					<li class="good">
+						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-safari"></use></svg>
+					</li>
+				</ul>
+			</td> -->
+			<td>
+				<span class="slnt_backslant" style="font-style: oblique;">argvfonts</span>
+				<ul class="browser-result">
+					<li class="good">
+						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
+					</li>
+					<li class="good">
+						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-firefox"></use></svg>
+					</li>
+					<li class="bad">
+						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-safari"></use></svg>
+					</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<td><code>font-style: oblique 10deg;</code>
+				<div class="note">
+					"Positive angles represent a clockwise slant; negative angles represent a counter-clockwise slant." <a href="https://drafts.csswg.org/css-fonts-4/#font-style-prop">CSS&nbsp;fonts&nbsp;4</a>
+					<br> (It is unclear whether this should skew fonts that do not have a Slant axis.)
+				</div>
+			</td>
+			<td>
+				<span class="slnt" style="font-style: oblique 10deg;">argvfonts</span>
+				<ul class="browser-result">
+					<li class="good">
+						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
+					</li>
+					<li class="good">
+						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-firefox"></use></svg>
+					</li>
+					<li class="bad">
+						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-safari"></use></svg>
+					</li>
+				</ul>
+			</td>
+			<td class="ital">
+				<span class="ital" style="font-style: oblique 10deg;">argvfonts</span>
+				<ul class="browser-result">
+					<li class="maybe">
+						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
+					</li>
+					<li class="maybe">
+						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-firefox"></use></svg>
+					</li>
+					<li class="maybe">
+						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-safari"></use></svg>
+					</li>
+				</ul>
+			</td>
+			<!-- <td>
+				<span class="slnt_ital" style="font-style: oblique 10deg;">argvfonts</span>
+				<ul class="browser-result">
+					<li class="good">
+						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
+					</li>
+					<li class="good">
+						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-firefox"></use></svg>
+					</li>
+					<li class="good">
+						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-safari"></use></svg>
+					</li>
+				</ul>
+			</td> -->
+			<td>
+				<span class="slnt_backslant" style="font-style: oblique 10deg;">argvfonts</span>
+				<ul class="browser-result">
+					<li class="good">
+						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
+					</li>
+					<li class="good">
+						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-firefox"></use></svg>
+					</li>
+					<li class="bad">
+						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-safari"></use></svg>
+					</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<td><code>&lt;i&gt;</code>
+				<div class="note">
+					"Selects a font that is labeled as an oblique face, or an italic face if one is not." <a href="https://drafts.csswg.org/css-fonts-3/#font-style-prop">CSS&nbsp;fonts&nbsp;3</a> 
+					The <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-em-element">&lt;em&gt;</a> tag may work differently depending on the language.
+				</div>
+			</td>
 			<td>
 				<span class="slnt"><i>argvfonts</i></span>
 				<ul class="browser-result">
@@ -290,7 +339,7 @@
 					<li class="good">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-firefox"></use></svg>
 					</li>
-					<li class="good">
+					<li class="bad">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-safari"></use></svg>
 					</li>
 				</ul>
@@ -304,7 +353,7 @@
 					<li class="good">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-firefox"></use></svg>
 					</li>
-					<li class="good">
+					<li class="bad">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-safari"></use></svg>
 					</li>
 				</ul>
@@ -332,14 +381,19 @@
 					<li class="good">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-firefox"></use></svg>
 					</li>
-					<li class="good">
+					<li class="bad">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-safari"></use></svg>
 					</li>
 				</ul>
 			</td>
 		</tr>
 		<tr>
-			<td><code>font-style: oblique -10deg;</code></td>
+			<td>
+				<code>font-style: oblique -10deg;</code>
+				<div class="note">
+					Rare case; will only work with fonts that include "backslanted" styles. "Negative angles represent a counter-clockwise slant." <a href="https://drafts.csswg.org/css-fonts-4/#font-style-prop">CSS&nbsp;fonts&nbsp;4</a>.
+				</div>
+			</td>
 			<td>
 				<span class="slnt" style="font-style: oblique -10deg;">argvfonts</span>
 				<ul class="browser-result">
@@ -349,7 +403,7 @@
 					<li class="good">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-firefox"></use></svg>
 					</li>
-					<li class="good">
+					<li class="bad">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-safari"></use></svg>
 					</li>
 				</ul>
@@ -360,7 +414,7 @@
 					<li class="good">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
 					</li>
-					<li class="good">
+					<li class="bad">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-firefox"></use></svg>
 					</li>
 					<li class="good">
@@ -391,7 +445,7 @@
 					<li class="good">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-firefox"></use></svg>
 					</li>
-					<li class="good">
+					<li class="bad">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-safari"></use></svg>
 					</li>
 				</ul>
@@ -399,23 +453,7 @@
 		</tr>
 		
 	</table>
-	<div class="centered-col">
-		<h2>Browsers tested (March 24, 2020)</h2>
-		<ul class="browser-result">
-			<li>
-				<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
-				Chrome Canary, Version 83.0.4094.0
-			</li>
-			<li>
-				<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-firefox"></use></svg>
-				Firefox
-			</li>
-			<li>
-				<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-safari"></use></svg>
-				Safari
-			</li>
-		</ul>
-	</div>
+	
 	</main>
 </body>
 </html>
