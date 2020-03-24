@@ -1,0 +1,24 @@
+{
+  "name": "vf-slnt-test",
+  "version": "1.0.0",
+  "description": "A simple test site for the font-style CSS prop & variable fonts",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arrowtype/vf-slnt-test.git"
+  },
+  "author": "Arrow Type",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/arrowtype/vf-slnt-test/issues"
+  },
+  "homepage": "https://github.com/arrowtype/vf-slnt-test#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "lite-server": "^2.5.4"
+  }
+}
