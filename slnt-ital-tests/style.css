@@ -3,6 +3,12 @@
 	font-style: oblique 0deg 15deg;
 	src: url('fonts/Inter.var.woff2');
 }
+@font-face {
+	font-family: 'RecVF';
+	font-weight: 300 1000;
+	font-style: oblique 0deg 15deg;
+	src: url('fonts/Recursive_VF_1.046--subset_range_english_basic.woff2');
+}
 
 
 @font-face {
@@ -43,16 +49,15 @@ html {
 }
 
 code, pre {
-	font-family: 'TestVF-slnt';
+	font-family: 'RecVF', monospace;
+	font-variation-settings: 'CASL' 1;
+	font-weight: 500;
 	border-radius: 0.125em;
-	background: #eeeeee;
+	background: hsla(0, 0%, 0%, 0.075);
 	box-sizing: border-box;
 	overflow-x: auto;
 }
 
-code {
-	background: #e8f3ff;
-}
 
 .slnt {
 	font-family: 'TestVF-slnt';
@@ -116,14 +121,17 @@ td, th {
 	margin: 0;
 	padding: 1.5rem 1rem;
 	text-align: left;
+	vertical-align: top;
 }
 
 td code {
-	font-size: 0.625em;
+	display: inline-block;
+	margin-bottom: 0.5rem;
 }
 
 td span {
 	font-size: 2rem;
+	line-height: 0.5;
 }
 
 table ul {
@@ -142,12 +150,13 @@ table li {
 }
 
 .browser-result {
-	margin: 0.25rem;
+	margin: 0;
 	list-style: none;
 }
 
 .browser-result li {
-	margin:0 0.5rem 0 0;
+	line-height: 1;
+	margin:1rem 0.5rem 0 0;
 }
 
 .browser-result svg {
@@ -159,7 +168,7 @@ table li {
 }
 
 .browser-result .good {
-	color: teal;
+	color: rgb(141, 211, 211);
 	list-style: none;
 }
 .browser-result .good:before {
