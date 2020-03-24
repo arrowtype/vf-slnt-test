@@ -37,6 +37,10 @@
 
 :root {
 	--pad: 2.5vw;
+	--good: hsl(180, 44%, 69%);
+	--goodText: hsl(180, 44%, 30%);
+	--bad: hsl(6, 69%, 51%);
+	--badText: hsl(6, 69%, 30%);
 }
 
 html {
@@ -143,6 +147,8 @@ table ul {
 table .note {
 	max-width: 35ch;
 	font-size: 0.875em;
+	max-height: 4.75rem;
+	overflow: auto;
 }
 
 /* END table */
@@ -166,6 +172,43 @@ table li {
 	margin:1rem 0.5rem 0 0;
 }
 
+[data-tooltip] {
+	position: relative;
+	cursor: help;
+}
+
+[data-tooltip]:after {
+	content: attr(data-tooltip);
+	visibility: hidden;
+	opacity: 0;
+	position: absolute;
+	padding: 0.5em;
+	border-radius: 0.25rem;
+	z-index: 2;
+	left: 0;
+	top: 110%;
+	width: 20ch;
+	background: white;
+	color: black;
+	line-height: 1.25;
+	box-shadow: 0 0.125rem 0.25rem currentColor;
+}
+
+[data-tooltip]:hover:after {
+	visibility: visible;
+	opacity: 1;
+}
+
+[data-tooltip].good:after {
+	border: var(--good) 2px solid;
+	color: var(--goodText);
+}
+
+[data-tooltip].bad:after {
+	border: var(--bad) 2px solid;
+	color: var(--badText);
+}
+
 .browser-result svg {
 	fill: currentColor;
 	position: relative;
@@ -175,7 +218,7 @@ table li {
 }
 
 .browser-result .good {
-	color: rgb(141, 211, 211);
+	color: var(--good);
 	list-style: none;
 }
 .browser-result .good:before {
@@ -184,7 +227,7 @@ table li {
 }
 
 .browser-result .bad {
-	color: red;
+	color: var(--bad);
 	list-style: none;
 }
 .browser-result .bad:before {

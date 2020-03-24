@@ -23,17 +23,6 @@
 	<main>
 		<div class="centered-col">
 			<h1>font-style tests (WIP)</h1>
-			<!-- <p>
-			Takeaways for CSS Spec, Fonts Level 4:
-			</p>
-			<ul>
-				<li>
-					It is currently unclear what behavior should occur for <code>font-style: oblique XXdeg</code> if a font lacks a <code>slnt</code> axis. 
-				</li>
-				<li>
-					Level 3 made it clear that <code>font-style:oblique</code> should select an italic face if an oblique one is not available. 
-				</li>
-			</ul> -->
 		</div>
 		<div class="centered-col">
 			<h2>Browsers tested (March 24, 2020)</h2>
@@ -51,13 +40,14 @@
 					Safari Technology Preview, Release 102 (Safari 13.2, WebKit 15610.1.5.2)
 				</li>
 			</ul>
+			<br>
+			<p>Note: in the table below, you can hover over each browser icon for a note about what is specifically correct or incorrect in the implementation.</p>
 		</div>
 		<table>
 		<tr>
 			<th>Property/Declaration</th>
 			<th>Font w/ <code>slnt</code> axis, 0 to -15</th>
 			<th>Font w/ <code>ital</code> axis only</th>
-			<!-- <th>Font w/ <code>slnt</code> & <code>ital</code> axes</th> -->
 			<th>Font w/ <code>slnt</code> axis, 15 to -15</th>
 		</tr>
 		<tr>
@@ -72,13 +62,13 @@
 				<br>
 				<span class="slnt" style="font-variation-settings: 'slnt' -15;">argvfonts</span>
 				<ul class="browser-result">
-					<li class="good">
+					<li class="good" data-tooltip="Slants clockwise by about 15 degrees, activates 'rvrn' alts.">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
 					</li>
-					<li class="good">
+					<li class="good" data-tooltip="Slants clockwise by about 15 degrees, activates 'rvrn' alts.">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-firefox"></use></svg>
 					</li>
-					<li class="good">
+					<li class="good" data-tooltip="Slants clockwise by about 15 degrees, activates 'rvrn' alts.">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-safari"></use></svg>
 					</li>
 				</ul>
@@ -88,45 +78,29 @@
 				<br>
 				<span class="ital" style="font-variation-settings: 'ital' 1;">argvfonts</span>
 				<ul class="browser-result">
-					<li class="good">
+					<li class="good" data-tooltip="Slants clockwise by about 15 degrees, activates 'rvrn' alts.">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
 					</li>
-					<li class="good">
+					<li class="good" data-tooltip="Slants clockwise by about 15 degrees, activates 'rvrn' alts.">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-firefox"></use></svg>
 					</li>
-					<li class="good">
+					<li class="good" data-tooltip="Slants clockwise by about 15 degrees, activates 'rvrn' alts.">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-safari"></use></svg>
 					</li>
 				</ul>
 			</td>
-			<!-- <td>
-				<code>'slnt' -15, 'ital' 1;</code>
-				<br>
-				<span class="slnt_ital" style="font-variation-settings: 'slnt' -15, 'ital' 1;">argvfonts</span>
-				<ul class="browser-result">
-					<li class="good">
-						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
-					</li>
-					<li class="good">
-						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-firefox"></use></svg>
-					</li>
-					<li class="good">
-						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-safari"></use></svg>
-					</li>
-				</ul>
-			</td> -->
 			<td>
 				<code>'slnt' 15;</code>
 				<br>
 				<span class="slnt_backslant" style="font-variation-settings: 'slnt' 15;">argvfonts</span>
 				<ul class="browser-result">
-					<li class="good">
+					<li class="good" data-tooltip="Slants counter-clockwise by about 15 degrees, activates 'rvrn' alts.">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
 					</li>
-					<li class="good">
+					<li class="good" data-tooltip="Slants counter-clockwise by about 15 degrees, activates 'rvrn' alts.">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-firefox"></use></svg>
 					</li>
-					<li class="good">
+					<li class="good" data-tooltip="Slants counter-clockwise by about 15 degrees, activates 'rvrn' alts.">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-safari"></use></svg>
 					</li>
 				</ul>
@@ -142,13 +116,13 @@
 			<td>
 				<span class="slnt" style="font-style: italic;">argvfonts</span>
 				<ul class="browser-result">
-					<li class="good">
+					<li class="good" data-tooltip="Slants clockwise by about 15 degrees, activates 'rvrn' alts.">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
 					</li>
-					<li class="good">
+					<li class="good" data-tooltip="Slants clockwise by about 15 degrees, activates 'rvrn' alts.">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-firefox"></use></svg>
 					</li>
-					<li class="bad">
+					<li class="bad" data-tooltip="Faux-slants text, doesn't activate 'rvrn' alternates.">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-safari"></use></svg>
 					</li>
 				</ul>
@@ -156,41 +130,27 @@
 			<td class="ital">
 				<span class="ital" style="font-style: italic;">argvfonts</span>
 				<ul class="browser-result">
-					<li class="bad">
+					<li class="bad" data-tooltip="Faux-slants text, doesn't activate 'rvrn' alternates.">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
 					</li>
-					<li class="good">
+					<li class="good" data-tooltip="Slants clockwise by about 15 degrees, activates 'rvrn' alts.">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-firefox"></use></svg>
 					</li>
-					<li class="bad">
+					<li class="bad" data-tooltip="Correctly activates italic style w/ 'rvrn' alts, but then double-slants text (adds extra ≈20deg of skew).">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-safari"></use></svg>
 					</li>
 				</ul>
 			</td>
-			<!-- <td>
-				<span class="slnt_ital" style="font-style: italic;">argvfonts</span>
-				<ul class="browser-result">
-					<li class="good">
-						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
-					</li>
-					<li class="good">
-						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-firefox"></use></svg>
-					</li>
-					<li class="good">
-						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-safari"></use></svg>
-					</li>
-				</ul>
-			</td> -->
 			<td>
 				<span class="slnt_backslant" style="font-style: italic;">argvfonts</span>
 				<ul class="browser-result">
-					<li class="good">
+					<li class="good" data-tooltip="Slants clockwise by about 15 degrees, activates 'rvrn' alts.">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
 					</li>
-					<li class="good">
+					<li class="good" data-tooltip="Slants clockwise by about 15 degrees, activates 'rvrn' alts.">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-firefox"></use></svg>
 					</li>
-					<li class="bad">
+					<li class="bad" data-tooltip="Faux-slants text, doesn't activate 'rvrn' alternates.">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-safari"></use></svg>
 					</li>
 				</ul>
@@ -205,13 +165,13 @@
 			<td>
 				<span class="slnt" style="font-style: oblique;">argvfonts</span>
 				<ul class="browser-result">
-					<li class="good">
+					<li class="good" data-tooltip="Slants clockwise by about 15 degrees, activates 'rvrn' alts.">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
 					</li>
-					<li class="good">
+					<li class="good" data-tooltip="Slants clockwise by about 15 degrees, activates 'rvrn' alts.">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-firefox"></use></svg>
 					</li>
-					<li class="bad">
+					<li class="bad" data-tooltip="Faux-slants text, doesn't activate 'rvrn' alternates.">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-safari"></use></svg>
 					</li>
 				</ul>
@@ -219,41 +179,27 @@
 			<td class="ital">
 				<span class="ital" style="font-style: oblique;">argvfonts</span>
 				<ul class="browser-result">
-					<li class="bad">
+					<li class="bad" data-tooltip="Faux-slants text, doesn't activate 'rvrn' alternates.">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
 					</li>
-					<li class="bad">
+					<li class="bad" data-tooltip="Faux-slants text, doesn't activate 'rvrn' alternates.">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-firefox"></use></svg>
 					</li>
-					<li class="bad">
+					<li class="bad" data-tooltip="Faux-slants text, doesn't activate 'rvrn' alternates.">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-safari"></use></svg>
 					</li>
 				</ul>
 			</td>
-			<!-- <td>
-				<span class="slnt_ital" style="font-style: oblique;">argvfonts</span>
-				<ul class="browser-result">
-					<li class="good">
-						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
-					</li>
-					<li class="good">
-						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-firefox"></use></svg>
-					</li>
-					<li class="good">
-						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-safari"></use></svg>
-					</li>
-				</ul>
-			</td> -->
 			<td>
 				<span class="slnt_backslant" style="font-style: oblique;">argvfonts</span>
 				<ul class="browser-result">
-					<li class="good">
+					<li class="good" data-tooltip="Slants clockwise by about 15 degrees, activates 'rvrn' alts.">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
 					</li>
-					<li class="good">
+					<li class="good" data-tooltip="Slants clockwise by about 15 degrees, activates 'rvrn' alts.">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-firefox"></use></svg>
 					</li>
-					<li class="bad">
+					<li class="bad" data-tooltip="Doesn't slant text (maybe slants positively *and* negatively?). Does activate 'rvrn' alts.">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-safari"></use></svg>
 					</li>
 				</ul>
@@ -263,19 +209,19 @@
 			<td><code>font-style: oblique 10deg;</code>
 				<div class="note">
 					"Positive angles represent a clockwise slant; negative angles represent a counter-clockwise slant." <a href="https://drafts.csswg.org/css-fonts-4/#font-style-prop">CSS&nbsp;fonts&nbsp;4</a>
-					<br> (It is unclear whether this should skew fonts that do not have a Slant axis.)
+					<br> (It is unclear in the CSS spec whether this should artificially skew fonts that do not have a Slant axis, but such behavior suggests that the capability is native to the font, and therefore is inadvisable.)
 				</div>
 			</td>
 			<td>
 				<span class="slnt" style="font-style: oblique 10deg;">argvfonts</span>
 				<ul class="browser-result">
-					<li class="good">
+					<li class="good" data-tooltip="Slants clockwise by about 10 degrees, activates 'rvrn' alts.">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
 					</li>
-					<li class="good">
+					<li class="good" data-tooltip="Slants clockwise by about 10 degrees, activates 'rvrn' alts.">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-firefox"></use></svg>
 					</li>
-					<li class="bad">
+					<li class="bad" data-tooltip="No stylistic changes applied.">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-safari"></use></svg>
 					</li>
 				</ul>
@@ -283,41 +229,27 @@
 			<td class="ital">
 				<span class="ital" style="font-style: oblique 10deg;">argvfonts</span>
 				<ul class="browser-result">
-					<li class="maybe">
+					<li class="good" data-tooltip="No stylistic changes applied.">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
 					</li>
-					<li class="maybe">
+					<li class="bad" data-tooltip="Text artificially skewed by 10 degrees.">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-firefox"></use></svg>
 					</li>
-					<li class="maybe">
+					<li class="good" data-tooltip="No stylistic changes applied.">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-safari"></use></svg>
 					</li>
 				</ul>
 			</td>
-			<!-- <td>
-				<span class="slnt_ital" style="font-style: oblique 10deg;">argvfonts</span>
-				<ul class="browser-result">
-					<li class="good">
-						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
-					</li>
-					<li class="good">
-						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-firefox"></use></svg>
-					</li>
-					<li class="good">
-						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-safari"></use></svg>
-					</li>
-				</ul>
-			</td> -->
 			<td>
 				<span class="slnt_backslant" style="font-style: oblique 10deg;">argvfonts</span>
 				<ul class="browser-result">
-					<li class="good">
+					<li class="good" data-tooltip="Slants clockwise by about 10 degrees, activates 'rvrn' alts.">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
 					</li>
-					<li class="good">
+					<li class="good" data-tooltip="Slants clockwise by about 10 degrees, activates 'rvrn' alts.">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-firefox"></use></svg>
 					</li>
-					<li class="bad">
+					<li class="bad"  data-tooltip="Text backslanted by 10deg, 'rvrn' alts activated.">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-safari"></use></svg>
 					</li>
 				</ul>
@@ -333,13 +265,13 @@
 			<td>
 				<span class="slnt"><i>argvfonts</i></span>
 				<ul class="browser-result">
-					<li class="good">
+					<li class="good"  data-tooltip="Slants clockwise by about 15 degrees, activates 'rvrn' alts.">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
 					</li>
-					<li class="good">
+					<li class="good"  data-tooltip="Slants clockwise by about 15 degrees, activates 'rvrn' alts.">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-firefox"></use></svg>
 					</li>
-					<li class="bad">
+					<li class="bad" data-tooltip="Faux-slants text, doesn't activate 'rvrn' alternates.">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-safari"></use></svg>
 					</li>
 				</ul>
@@ -347,41 +279,27 @@
 			<td class="ital">
 				<span class="ital"><i>argvfonts</i></span>
 				<ul class="browser-result">
-					<li class="bad">
+					<li class="bad" data-tooltip="Faux-slants text, doesn't activate 'rvrn' alternates.">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
 					</li>
-					<li class="good">
+					<li class="good"  data-tooltip="Slants clockwise by about 15 degrees, activates 'rvrn' alts.">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-firefox"></use></svg>
 					</li>
-					<li class="bad">
+					<li class="bad"  data-tooltip="Correctly activates italic style w/ 'rvrn' alts, but then double-slants text (adds extra ≈20deg of skew).">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-safari"></use></svg>
 					</li>
 				</ul>
 			</td>
-			<!-- <td>
-				<span class="slnt_ital"><i>argvfonts</i></span>
-				<ul class="browser-result">
-					<li class="good">
-						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
-					</li>
-					<li class="good">
-						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-firefox"></use></svg>
-					</li>
-					<li class="good">
-						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-safari"></use></svg>
-					</li>
-				</ul>
-			</td> -->
 			<td>
 				<span class="slnt_backslant"><i>argvfonts</i></span>
 				<ul class="browser-result">
-					<li class="good">
+					<li class="good" data-tooltip="Slants clockwise by about 15 degrees, activates 'rvrn' alts.">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
 					</li>
-					<li class="good">
+					<li class="good" data-tooltip="Slants clockwise by about 15 degrees, activates 'rvrn' alts.">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-firefox"></use></svg>
 					</li>
-					<li class="bad">
+					<li class="bad" data-tooltip="Faux-slants text, doesn't activate 'rvrn' alternates.">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-safari"></use></svg>
 					</li>
 				</ul>
@@ -397,13 +315,13 @@
 			<td>
 				<span class="slnt" style="font-style: oblique -10deg;">argvfonts</span>
 				<ul class="browser-result">
-					<li class="good">
+					<li class="good"  data-tooltip="Correctly does not slant text.">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
 					</li>
-					<li class="good">
+					<li class="good"  data-tooltip="Correctly does not slant text.">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-firefox"></use></svg>
 					</li>
-					<li class="bad">
+					<li class="bad" data-tooltip="Incorrectly activates Slant axis to clockwise 10deg.">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-safari"></use></svg>
 					</li>
 				</ul>
@@ -411,41 +329,27 @@
 			<td class="ital">
 				<span class="ital" style="font-style: oblique -10deg;">argvfonts</span>
 				<ul class="browser-result">
-					<li class="good">
+					<li class="good" data-tooltip="Correctly does not slant text.">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
 					</li>
-					<li class="bad">
+					<li class="bad" data-tooltip="Faux-slants text to counter-clockwise -10deg, doesn't activate 'rvrn' alternates.">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-firefox"></use></svg>
 					</li>
-					<li class="good">
+					<li class="good" data-tooltip="Correctly does not slant text.">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-safari"></use></svg>
 					</li>
 				</ul>
 			</td>
-			<!-- <td>
-				<span class="slnt_ital" style="font-style: oblique -10deg;">argvfonts</span>
-				<ul class="browser-result">
-					<li class="good">
-						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
-					</li>
-					<li class="good">
-						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-firefox"></use></svg>
-					</li>
-					<li class="good">
-						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-safari"></use></svg>
-					</li>
-				</ul>
-			</td> -->
 			<td>
 				<span class="slnt_backslant" style="font-style: oblique -10deg;">argvfonts</span>
 				<ul class="browser-result">
-					<li class="good">
+					<li class="good" data-tooltip="Slants counter-clockwise by about 10 degrees, activates 'rvrn' alts.">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
 					</li>
-					<li class="good">
+					<li class="good" data-tooltip="Slants counter-clockwise by about 10 degrees, activates 'rvrn' alts.">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-firefox"></use></svg>
 					</li>
-					<li class="bad">
+					<li class="bad" data-tooltip="Incorrectly activates Slant axis to clockwise 10deg.">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-safari"></use></svg>
 					</li>
 				</ul>
