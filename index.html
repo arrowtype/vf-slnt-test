@@ -12,7 +12,7 @@
 	<main>
 
 		<div class="centered-col">
-			<h1>Browser Test: <code>font-style</code> for Slant axis in OpenType variable fonts</h1>
+			<h1>Browser Test: <code>font-style</code> for Italic axis in OpenType variable fonts</h1>
 			<p>A test page to determine whether browsers meet the <a href="https://drafts.csswg.org/css-fonts-4/#font-style-prop">CSS Spec for font-style</a>.</p>
 		</div>
 	
@@ -29,11 +29,21 @@
   src: url('fonts/Inter.var.ttf');
 }</pre>
 		<p class="test-expectation">All following elements should be clockwise-slanted (“forward-leaning”), except for <code>font-style: oblique -10deg;</code>, which provides a value outside the font's Slant axis range.</p>
-		<div class="test-text">
-			<p class="var-slnt">font-variation-settings: 'slnt' -10;</p>
+		<div class="test-text recursive">
+			<p class="var-ital">font-variation-settings: 'ital' 1;</p>
 			<p class="test-note">Should have a clockwise slant. Works correctly in most modern browsers.</p>
+			<ul>
+				<li class="browser-result good">Chrome</li>
+				<li class="browser-result good">Safari</li>
+				<li class="browser-result good">Firefox</li>
+			</ul>
 			<p class="oblique-only">font-style: oblique;</p>
 			<p class="test-note">Should have a clockwise slant matching font-variation-settings example above.</p>
+				<ul>
+					<li class="browser-result bad">Chrome</li>
+					<li class="browser-result bad">Safari</li>
+					<li class="browser-result bad">Firefox</li>
+				</ul>
 			<p class="oblique">font-style: oblique 10deg;</p>
 			<p class="test-note">Should have a clockwise slant matching font-variation-settings example above.</p>
 			<p class="italic">font-style: italic;</p>
