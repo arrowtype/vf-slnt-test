@@ -16,7 +16,7 @@
 	font-family: 'RecVF';
 	font-weight: 300 1000;
 	font-style: oblique 0deg 15deg;
-	src: url('fonts/Recursive_VF_1.034--subset_range_english_basic.woff2');
+	src: url('fonts/Recursive_VF_1.046--subset_range_english_basic.woff2');
 }
 
 :root {
@@ -64,7 +64,7 @@ a {
 
 .centered-col {
 	margin: 5rem auto;
-	max-width: 760px;
+	max-width: 800px;
 }
 
 .test-text {
@@ -76,7 +76,7 @@ a {
 	font-weight: 400;
 	font-variation-settings: 'CASL' 1;
 	color: red;
-	font-size: 0.25em;
+	font-size: 0.375em;
 	color: #22f;
 	margin-top: calc(-1.25 * var(--pad));
 }
@@ -86,6 +86,27 @@ a {
 		margin-top: calc(-0.5 * var(--pad));
 	}
 }
+
+.browser-result {
+	font-size: 0.375em;
+}
+
+.browser-result.good {
+	color: teal;
+	list-style: none;
+}
+.browser-result.good:before {
+	content: "✔ ";
+}
+
+.browser-result.bad {
+	color: red;
+	list-style: none;
+}
+.browser-result.bad:before {
+	content: "🆇 ";
+}
+
 
 .wrong {
 	color:#aa2222;
@@ -149,6 +170,10 @@ code {
 
 .var-slnt {
 	font-variation-settings: 'slnt' -10;
+}
+
+.var-ital {
+	font-variation-settings: 'ital' 1;
 }
 
 /* footer */

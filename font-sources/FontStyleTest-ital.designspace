@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<designspace format="4.1">
+  <axes>
+    <axis tag="ital" name="Italic" minimum="0" maximum="1" default="0"/>
+  </axes>
+  <rules>
+    <rule name="italic">
+      <conditionset>
+        <condition name="Italic" minimum="0" maximum="0.499"/>
+      </conditionset>
+      <sub name="f" with="f.mono"/>
+      <sub name="g" with="g.mono"/>
+      <sub name="i" with="i.mono"/>
+      <sub name="l" with="l.mono"/>
+      <sub name="r" with="r.mono"/>
+    </rule>
+    <rule name="italic">
+      <conditionset>
+        <condition name="Italic" minimum="0.5" maximum="1"/>
+      </conditionset>
+      <sub name="a" with="a.italic"/>
+      <sub name="b" with="b.italic"/>
+      <sub name="c" with="c.italic"/>
+      <sub name="d" with="d.italic"/>
+      <sub name="e" with="e.italic"/>
+      <sub name="f" with="f.italic"/>
+      <sub name="g" with="g.italic"/>
+      <sub name="h" with="h.italic"/>
+      <sub name="i" with="i.italic"/>
+      <sub name="j" with="j.italic"/>
+      <sub name="k" with="k.italic"/>
+      <sub name="l" with="l.italic"/>
+      <sub name="m" with="m.italic"/>
+      <sub name="n" with="n.italic"/>
+      <sub name="r" with="r.italic"/>
+      <sub name="u" with="u.italic"/>
+      <sub name="v" with="v.italic"/>
+      <sub name="w" with="w.italic"/>
+      <sub name="x" with="x.italic"/>
+      <sub name="y" with="y.italic"/>
+      <sub name="z" with="z.italic"/>
+    </rule>
+  </rules>
+  <sources>
+    <source filename="FontStyleTest-Regular.ufo" familyname="FontStyleTest" stylename="Regular">
+      <lib copy="1"/>
+      <groups copy="1"/>
+      <features copy="1"/>
+      <info copy="1"/>
+      <location>
+        <dimension name="Italic" xvalue="0"/>
+      </location>
+    </source>
+    <source filename="FontStyleTest-Italic.ufo" familyname="FontStyleTest" stylename="Italic">
+      <location>
+        <dimension name="Italic" xvalue="1"/>
+      </location>
+    </source>
+  </sources>
+  <instances>
+    <instance familyname="FontStyleTest" stylename="Regular" filename="instances/FontStyleTest-Style_1.ufo">
+      <location>
+        <dimension name="Slant" xvalue="0"/>
+      </location>
+      <kerning/>
+      <info/>
+    </instance>
+    <instance familyname="FontStyleTest" stylename="Italic" filename="instances/FontStyleTest-Style_2.ufo">
+      <location>
+        <dimension name="Slant" xvalue="1"/>
+      </location>
+      <kerning/>
+      <info/>
+    </instance>
+  </instances>
+  <lib>
+    <dict>
+      <key>com.letterror.mathModelPref</key>
+      <string>previewVarLib</string>
+    </dict>
+  </lib>
+</designspace>
