@@ -103,6 +103,8 @@ a {
 table {
 	border-collapse: collapse;
 	margin: 0 auto;
+	min-width: 1200px;
+	max-width: 1600px;
 }
 
 th {
@@ -117,8 +119,11 @@ td, th {
 }
 
 td code {
-	background: transparent;
-	font-size: 1.5em;
+	font-size: 0.625em;
+}
+
+td span {
+	font-size: 2rem;
 }
 
 table ul {

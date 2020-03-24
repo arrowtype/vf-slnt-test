@@ -27,16 +27,17 @@
 		</div>
 		<table>
 		<tr>
-			<th>Property</th>
+			<th>Property/Declaration</th>
 			<th>Font w/ <code>slnt</code> axis</th>
 			<th>Font w/ <code>ital</code> axis</th>
-			<th>w/ <code>slnt</code> & <code>ital</code> axes</th>
-			<th><code>slnt</code> axis, -15 to 15</th>
+			<th>Font w/ <code>slnt</code> & <code>ital</code> axes</th>
+			<th>Font w/ <code>slnt</code> axis, -15 to 15</th>
 		</tr>
 		<tr>
 			<td>font-variation-settings</td>
 			<td>
-				<code class="slnt" style="font-variation-settings: 'slnt' -15;">'slnt' -15</code>
+				<code class="slnt" ">font-variation-settings: 'slnt' -15;</code>
+				<span class="slnt" style="font-variation-settings: 'slnt' -15;">argvfonts</span>
 				<ul class="browser-result">
 					<li class="good">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
@@ -50,7 +51,8 @@
 				</ul>
 			</td>
 			<td class="ital">
-				<code class="ital" style="font-variation-settings: 'ital' 1;">'ital' 1</code>
+				<code class="ital" ">font-variation-settings: 'ital' 1;</code>
+				<span class="ital" style="font-variation-settings: 'ital' 1;">argvfonts</span>
 				<ul class="browser-result">
 					<li class="good">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
@@ -64,7 +66,8 @@
 				</ul>
 			</td>
 			<td>
-				<code class="slnt_ital" style="font-variation-settings: 'slnt' -15, 'ital' 1;">'slnt'-15,'ital'1</code>
+				<code class="slnt_ital"">font-variation-settings: 'slnt'-15,'ital'1;</code>
+				<span class="slnt_ital" style="font-variation-settings: 'slnt' -15, 'ital' 1;">argvfonts</span>
 				<ul class="browser-result">
 					<li class="good">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
@@ -78,7 +81,8 @@
 				</ul>
 			</td>
 			<td>
-				<code class="slnt_backslant" style="font-variation-settings: 'slnt' 15;">'slnt' 15</code>
+				<code class="slnt_backslant" ">font-variation-settings: 'slnt' 15;</code>
+				<span class="slnt_backslant" style="font-variation-settings: 'slnt' 15;">argvfonts</span>
 				<ul class="browser-result">
 					<li class="good">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
@@ -95,7 +99,9 @@
 		<tr>
 			<td>font-style: oblique;</td>
 			<td>
-				<code class="slnt" style="font-style: oblique;">argvfonts</code>
+				<code class="slnt">font-style: oblique;</code>
+				<br>
+				<span class="slnt" style="font-style: oblique;">argvfonts</span>
 				<ul class="browser-result">
 					<li class="good">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
@@ -109,7 +115,9 @@
 				</ul>
 			</td>
 			<td class="ital">
-				<code class="ital" style="font-style: oblique;">argvfonts</code>
+				<code class="ital">font-style: oblique;</code>
+				<br>
+				<span class="ital" style="font-style: oblique;">argvfonts</span>
 				<ul class="browser-result">
 					<li class="bad">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
@@ -123,7 +131,9 @@
 				</ul>
 			</td>
 			<td>
-				<code class="slnt_ital" style="font-style: oblique;">argvfonts</code>
+				<code class="slnt_ital">font-style: oblique;</code>
+				<br>
+				<span class="slnt_ital" style="font-style: oblique;">argvfonts</span>
 				<ul class="browser-result">
 					<li class="good">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
@@ -137,7 +147,9 @@
 				</ul>
 			</td>
 			<td>
-				<code class="slnt_backslant" style="font-style: oblique;">argvfonts</code>
+				<code class="slnt_backslant">font-style: oblique;</code>
+				<br>
+				<span class="slnt_backslant" style="font-style: oblique;">argvfonts</span>
 				<ul class="browser-result">
 					<li class="good">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
@@ -154,7 +166,9 @@
 		<tr>
 			<td>font-style: oblique 10deg;</td>
 			<td>
-				<code class="slnt" style="font-style: oblique 10deg;">argvfonts</code>
+				<code>font-style: oblique 10deg;</code>
+				<br>
+				<span class="slnt" style="font-style: oblique 10deg;">argvfonts</span>
 				<ul class="browser-result">
 					<li class="good">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
@@ -168,7 +182,9 @@
 				</ul>
 			</td>
 			<td class="ital">
-				<code class="ital" style="font-style: oblique 10deg;">argvfonts</code>
+				<code>font-style: oblique 10deg;</code>
+				<br>
+				<span class="ital" style="font-style: oblique 10deg;">argvfonts</span>
 				<ul class="browser-result">
 					<li class="bad">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
@@ -182,7 +198,9 @@
 				</ul>
 			</td>
 			<td>
-				<code class="slnt_ital" style="font-style: oblique 10deg;">argvfonts</code>
+				<code>font-style: oblique 10deg;</code>
+				<br>
+				<span class="slnt_ital" style="font-style: oblique 10deg;">argvfonts</span>
 				<ul class="browser-result">
 					<li class="good">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
@@ -196,7 +214,9 @@
 				</ul>
 			</td>
 			<td>
-				<code class="slnt_backslant" style="font-style: oblique -10deg;">argvfonts</code>
+				<code>font-style: oblique -10deg;</code>
+				<br>
+				<span class="slnt_backslant" style="font-style: oblique -10deg;">argvfonts</span>
 				<ul class="browser-result">
 					<li class="good">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
@@ -213,7 +233,9 @@
 		<tr>
 			<td>font-style: italic;</td>
 			<td>
-				<code class="slnt" style="font-style: italic;">argvfonts</code>
+				<code class="slnt">font-style: italic;</code>
+				<br>
+				<span class="slnt" style="font-style: italic;">argvfonts</span>
 				<ul class="browser-result">
 					<li class="good">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
@@ -227,7 +249,9 @@
 				</ul>
 			</td>
 			<td class="ital">
-				<code class="ital" style="font-style: italic;">argvfonts</code>
+				<code class="ital">font-style: italic;</code>
+				<br>
+				<span class="ital" style="font-style: italic;">argvfonts</span>
 				<ul class="browser-result">
 					<li class="bad">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
@@ -241,7 +265,9 @@
 				</ul>
 			</td>
 			<td>
-				<code class="slnt_ital" style="font-style: italic;">argvfonts</code>
+				<code class="slnt_ital">font-style: italic;</code>
+				<br>
+				<span class="slnt_ital" style="font-style: italic;">argvfonts</span>
 				<ul class="browser-result">
 					<li class="good">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
@@ -255,7 +281,9 @@
 				</ul>
 			</td>
 			<td>
-				<code class="slnt_backslant" style="font-style: italic;">argvfonts</code>
+				<code class="slnt_backslant">font-style: italic;</code>
+				<br>
+				<span class="slnt_backslant" style="font-style: italic;">argvfonts</span>
 				<ul class="browser-result">
 					<li class="good">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
@@ -272,7 +300,9 @@
 		<tr>
 			<td>&lt;i&gt;</td>
 			<td>
-				<code class="slnt"><i>argvfonts</i></code>
+				<code class="slnt">&lt;i&gt;argvfonts&lt;/i&gt;</i></code>
+				<br>
+				<span class="slnt"><i>argvfonts</i></span>
 				<ul class="browser-result">
 					<li class="good">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
@@ -286,7 +316,9 @@
 				</ul>
 			</td>
 			<td class="ital">
-				<code class="ital"><i>argvfonts</i></code>
+				<code class="ital">&lt;i&gt;argvfonts&lt;/i&gt;</i></code>
+				<br>
+				<span class="ital"><i>argvfonts</i></span>
 				<ul class="browser-result">
 					<li class="bad">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
@@ -300,7 +332,9 @@
 				</ul>
 			</td>
 			<td>
-				<code class="slnt_ital"><i>argvfonts</i></code>
+				<code class="slnt_ital">&lt;i&gt;argvfonts&lt;/i&gt;</i></code>
+				<br>
+				<span class="slnt_ital"><i>argvfonts</i></span>
 				<ul class="browser-result">
 					<li class="good">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
@@ -314,7 +348,9 @@
 				</ul>
 			</td>
 			<td>
-				<code class="slnt_backslant"><i>argvfonts</i></code>
+				<code class="slnt_backslant">&lt;i&gt;argvfonts&lt;/i&gt;</i></code>
+				<br>
+				<span class="slnt_backslant"><i>argvfonts</i></span>
 				<ul class="browser-result">
 					<li class="good">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
@@ -331,7 +367,9 @@
 		<tr>
 			<td>font-style: obqlique -10deg;</td>
 			<td>
-				<code class="slnt" style="font-style: obqlique -10deg;">argvfonts</code>
+				<code>font-style: obqlique -10deg;</code>
+				<br>
+				<span class="slnt" style="font-style: obqlique -10deg;">argvfonts</span>
 				<ul class="browser-result">
 					<li class="good">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
@@ -345,7 +383,9 @@
 				</ul>
 			</td>
 			<td class="ital">
-				<code class="ital" style="font-style: obqlique -10deg;">argvfonts</code>
+				<code>font-style: obqlique -10deg;</code>
+				<br>
+				<span class="ital" style="font-style: obqlique -10deg;">argvfonts</span>
 				<ul class="browser-result">
 					<li class="good">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
@@ -359,7 +399,9 @@
 				</ul>
 			</td>
 			<td>
-				<code class="slnt_ital" style="font-style: obqlique -10deg;">argvfonts</code>
+				<code>font-style: obqlique -10deg;</code>
+				<br>
+				<span class="slnt_ital" style="font-style: obqlique -10deg;">argvfonts</span>
 				<ul class="browser-result">
 					<li class="good">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
@@ -373,7 +415,9 @@
 				</ul>
 			</td>
 			<td>
-				<code class="slnt_backslant" style="font-style: obqlique -10deg;">argvfonts</code>
+				<code>font-style: obqlique -10deg;</code>
+				<br>
+				<span class="slnt_backslant" style="font-style: obqlique -10deg;">argvfonts</span>
 				<ul class="browser-result">
 					<li class="bad">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
