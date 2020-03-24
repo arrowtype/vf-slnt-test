@@ -42,6 +42,18 @@ html {
 	box-sizing: inherit;
 }
 
+code, pre {
+	font-family: 'TestVF-slnt';
+	border-radius: 0.125em;
+	background: #eeeeee;
+	box-sizing: border-box;
+	overflow-x: auto;
+}
+
+code {
+	background: #e8f3ff;
+}
+
 .slnt {
 	font-family: 'TestVF-slnt';
 }
@@ -81,14 +93,81 @@ a {
 	color: inherit;
 }
 
-.recursive {
-	font-family: 'RecVF', fantasy;
-}
-
 .centered-col {
 	margin: 5rem auto;
 	max-width: 800px;
 }
+
+/* table */
+
+table {
+	border-collapse: collapse;
+	margin: 0 auto;
+}
+
+th {
+	background: #fbfbfb;
+}
+
+td, th {
+	border: 1px solid #ccc;
+	margin: 0;
+	padding: 0.5rem;
+	text-align: left;
+}
+
+td code {
+	background: transparent;
+	font-size: 1.25em;
+}
+
+table ul {
+	list-style: none;
+	padding-left: 0;
+}
+
+/* END table */
+
+/* browser test results */
+
+table li {
+	font-family: serif;
+	display: inline-block;
+	padding-right: 0.5rem;
+}
+
+.browser-result {
+	font-size: 1.5rem;
+	margin: 0.25rem;
+}
+
+.browser-result li {
+	margin:0;
+}
+
+.browser-result svg {
+	fill: currentColor;
+	position: relative;
+	top: 0.25rem;
+}
+
+.browser-result .good {
+	color: teal;
+	list-style: none;
+}
+.browser-result .good:before {
+	content: "✓ ";
+}
+
+.browser-result .bad {
+	color: red;
+	list-style: none;
+}
+.browser-result .bad:before {
+	content: "✗ ";
+}
+
+/* END browser test results */
 
 .test-text {
 	font-size: 3rem;
@@ -110,30 +189,6 @@ a {
 	}
 }
 
-.browser-result {
-	font-size: 0.375em;
-}
-
-.browser-result.good {
-	color: teal;
-	list-style: none;
-}
-.browser-result.good:before {
-	content: "✔ ";
-}
-
-.browser-result.bad {
-	color: red;
-	list-style: none;
-}
-.browser-result.bad:before {
-	content: "🆇 ";
-}
-
-
-.wrong {
-	color:#aa2222;
-}
 
 .test-expectation {
 	min-height: 4em;
@@ -155,18 +210,7 @@ h1 code, h2 code, h3 code, p code, li code {
 	padding: 0 0.125em;
 }
 
-code, pre {
-	font-family: 'RecVF', monospace;
-	font-variation-settings: 'MONO' 1, 'CASL' 1;
-	border-radius: 0.125em;
-	background: #eeeeee;
-	box-sizing: border-box;
-	overflow-x: auto;
-}
 
-code {
-	background: #e8f3ff;
-}
 
 .comment {
 	font-variation-settings: 'MONO' 1, 'CASL' 1, 'slnt' -15;
