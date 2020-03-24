@@ -54,8 +54,8 @@ html {
 
 code, pre {
 	font-family: 'RecVF', monospace;
-	font-variation-settings: 'CASL' 1;
-	font-weight: 500;
+	font-variation-settings: 'CASL' 1, 'MONO' 1;
+	font-weight: inherit;
 	border-radius: 0.125em;
 	background: hsla(0, 0%, 0%, 0.075);
 	box-sizing: border-box;
@@ -177,7 +177,7 @@ table li {
 	cursor: help;
 }
 
-[data-tooltip]:after {
+[data-tooltip]:before {
 	content: attr(data-tooltip);
 	visibility: hidden;
 	opacity: 0;
@@ -194,17 +194,17 @@ table li {
 	box-shadow: 0 0.125rem 0.25rem currentColor;
 }
 
-[data-tooltip]:hover:after {
+[data-tooltip]:hover:before {
 	visibility: visible;
 	opacity: 1;
 }
 
-[data-tooltip].good:after {
+[data-tooltip].good:before {
 	border: var(--good) 2px solid;
 	color: var(--goodText);
 }
 
-[data-tooltip].bad:after {
+[data-tooltip].bad:before {
 	border: var(--bad) 2px solid;
 	color: var(--badText);
 }
@@ -221,7 +221,7 @@ table li {
 	color: var(--good);
 	list-style: none;
 }
-.browser-result .good:before {
+.browser-result .good:after {
 	font-size: 1.5rem;
 	content: "✓";
 }
@@ -230,7 +230,7 @@ table li {
 	color: var(--bad);
 	list-style: none;
 }
-.browser-result .bad:before {
+.browser-result .bad:after {
 	font-size: 1.5rem;
 	content: "✗";
 	padding-right: 0.275rem;
@@ -241,7 +241,7 @@ table li {
 	list-style: none;
 	font-weight: 600;
 }
-.browser-result .maybe:before {
+.browser-result .maybe:after {
 	font-size: 1.5rem;
 	content: "?";
 	padding-right: 0.275rem;
