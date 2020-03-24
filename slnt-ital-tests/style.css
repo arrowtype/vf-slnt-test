@@ -137,8 +137,8 @@ table li {
 }
 
 .browser-result {
-	font-size: 1.5rem;
 	margin: 0.25rem;
+	list-style: none;
 }
 
 .browser-result li {
@@ -149,6 +149,8 @@ table li {
 	fill: currentColor;
 	position: relative;
 	top: 0.25rem;
+	width: 24px;
+	height: 24px;
 }
 
 .browser-result .good {
@@ -156,6 +158,7 @@ table li {
 	list-style: none;
 }
 .browser-result .good:before {
+	font-size: 1.5rem;
 	content: "✓ ";
 }
 
@@ -164,6 +167,7 @@ table li {
 	list-style: none;
 }
 .browser-result .bad:before {
+	font-size: 1.5rem;
 	content: "✗ ";
 }
 
