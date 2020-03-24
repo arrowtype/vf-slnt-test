@@ -112,13 +112,13 @@ th {
 td, th {
 	border: 1px solid #ccc;
 	margin: 0;
-	padding: 0.5rem;
+	padding: 1.5rem 1rem;
 	text-align: left;
 }
 
 td code {
 	background: transparent;
-	font-size: 1.25em;
+	font-size: 1.5em;
 }
 
 table ul {
@@ -142,7 +142,7 @@ table li {
 }
 
 .browser-result li {
-	margin:0;
+	margin:0 0.5rem 0 0;
 }
 
 .browser-result svg {
@@ -159,7 +159,7 @@ table li {
 }
 .browser-result .good:before {
 	font-size: 1.5rem;
-	content: "✓ ";
+	content: "✓";
 }
 
 .browser-result .bad {
@@ -168,7 +168,7 @@ table li {
 }
 .browser-result .bad:before {
 	font-size: 1.5rem;
-	content: "✗ ";
+	content: "✗";
 }
 
 /* END browser test results */
