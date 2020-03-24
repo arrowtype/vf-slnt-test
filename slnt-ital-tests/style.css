@@ -1,0 +1,220 @@
+@font-face {
+	font-family: 'Inter1';
+	font-style: oblique 0deg 15deg;
+	src: url('fonts/Inter.var.woff2');
+}
+
+
+@font-face {
+	font-family: 'TestVF-slnt';
+	font-style: oblique 0deg 15deg;
+	src: url('fonts/FontStyleTest-slnt-VF.woff2');
+}
+
+@font-face {
+	font-family: 'TestVF-slnt_ital';
+	font-style: oblique 0deg 15deg;
+	src: url('fonts/FontStyleTest-slnt_ital-VF.woff2');
+}
+
+@font-face {
+	font-family: 'TestVF-ital';
+	font-style: normal italic;
+	src: url('fonts/FontStyleTest-ital-VF.woff2');
+}
+
+@font-face {
+	font-family: 'TestVF-slnt_backslant';
+	font-style: oblique -15deg 15deg;
+	src: url('fonts/FontStyleTest-slnt_backslant-VF.woff2');
+}
+
+:root {
+	--pad: 2.5vw;
+}
+
+html {
+	box-sizing: border-box;
+	font-family: 'Inter1', fantasy;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+.slnt {
+	font-family: 'TestVF-slnt';
+}
+.slnt_ital {
+	font-family: 'TestVF-slnt_ital';
+}
+.ital {
+	font-family: 'TestVF-ital';
+}
+.slnt_backslant {
+	font-family: 'TestVF-slnt_backslant';
+}
+
+body {
+	margin: 0;
+	width: 100vw;
+}
+
+main {
+	padding: var(--pad);
+	margin: 0 auto calc(2 * var(--pad));
+}
+
+h1 {
+	font-weight: 900;
+	font-variation-settings: 'CASL' 1;
+	margin: calc(2 * var(--pad)) 0;
+}
+
+p, li {
+	max-width: 70ch;
+	line-height: 1.5;
+	margin-bottom: 1em;
+}
+
+a {
+	color: inherit;
+}
+
+.recursive {
+	font-family: 'RecVF', fantasy;
+}
+
+.centered-col {
+	margin: 5rem auto;
+	max-width: 800px;
+}
+
+.test-text {
+	font-size: 3rem;
+}
+
+.test-note {
+	font-family: 'RecVF', sans-serif;
+	font-weight: 400;
+	font-variation-settings: 'CASL' 1;
+	color: red;
+	font-size: 0.375em;
+	color: #22f;
+	margin-top: calc(-1.25 * var(--pad));
+}
+
+@media (min-width: 1200px) {
+	.test-note {
+		margin-top: calc(-0.5 * var(--pad));
+	}
+}
+
+.browser-result {
+	font-size: 0.375em;
+}
+
+.browser-result.good {
+	color: teal;
+	list-style: none;
+}
+.browser-result.good:before {
+	content: "✔ ";
+}
+
+.browser-result.bad {
+	color: red;
+	list-style: none;
+}
+.browser-result.bad:before {
+	content: "🆇 ";
+}
+
+
+.wrong {
+	color:#aa2222;
+}
+
+.test-expectation {
+	min-height: 4em;
+}
+
+.positive-oblique, .results {
+	font-family: 'Inter1', fantasy;
+}
+
+.negative-oblique {
+	font-family: 'Inter2', fantasy;
+}
+
+pre {
+	padding: 0.5em;
+}
+
+h1 code, h2 code, h3 code, p code, li code {
+	padding: 0 0.125em;
+}
+
+code, pre {
+	font-family: 'RecVF', monospace;
+	font-variation-settings: 'MONO' 1, 'CASL' 1;
+	border-radius: 0.125em;
+	background: #eeeeee;
+	box-sizing: border-box;
+	overflow-x: auto;
+}
+
+code {
+	background: #e8f3ff;
+}
+
+.comment {
+	font-variation-settings: 'MONO' 1, 'CASL' 1, 'slnt' -15;
+	color: #666;
+}
+
+
+/* test CSS */
+
+.italic {
+	font-style: italic;
+}
+
+.oblique {
+	font-style: oblique 10deg;
+}
+.oblique-only {
+	font-style: oblique;
+}
+
+.oblique-neg {
+	font-style: oblique -10deg;
+}
+
+.var-slnt {
+	font-variation-settings: 'slnt' -10;
+}
+
+.var-ital {
+	font-variation-settings: 'ital' 1;
+}
+
+/* footer */
+
+footer {
+	width: 100vw;
+	padding: var(--pad);
+	background: black;
+	color: #ccc;
+}
+
+footer .centered-col {
+	margin-top: 1rem;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(350px, auto));
+	grid-gap: var(--pad);
+}
+
+.colophon {
+	color: #888;
+}
