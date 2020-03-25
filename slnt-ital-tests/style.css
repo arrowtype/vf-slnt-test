@@ -45,7 +45,7 @@
 
 html {
 	box-sizing: border-box;
-	font-family: 'Inter1', fantasy;
+	font-family: 'Inter1', sans-serif;
 }
 
 *, *:before, *:after {
