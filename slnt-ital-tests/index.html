@@ -22,10 +22,12 @@
 	</svg>
 	<main>
 		<div class="centered-col">
-			<h1>Browser Test: <code>font-style</code> for Slant and Italic axes in OpenType variable fonts</h1>
+			<h1>Browser Test: <code>font-style</code> for <code>slnt</code> and <code>ital</code> axes in OpenType Variable Fonts</h1>
 			<p>A test page to determine whether browsers meet the <a href="https://drafts.csswg.org/css-fonts-4/#font-style-prop">CSS Spec for font-style</a> for variable fonts with either Slant or Italic axes.</p>
 		</div>
 		<div class="centered-col">
+			<h2>Test method</h2>
+			<p>Three fonts have been made that are similar, but which handle "italics" in different ways that are all possible within the OpenType spec. In general, the simple way to see whether italics are being properly applied is to notice whether "cursive" alternates are being activated, such as the single-story <code>g</code> and the <code>f</code> with a descender. A few tests fail more subtly in Webkit, where alternates are activated, but letters are slanted incorrectly.</p>
 			<h2>Browsers tested (March 24, 2020)</h2>
 			<ul class="browser-result">
 				<li>
@@ -44,6 +46,7 @@
 			<br>
 			<p>Note: in the table below, you can hover over each browser icon for a note about what is specifically correct or incorrect in the implementation.</p>
 		</div>
+		<div class="table-box">
 		<table>
 		<tr>
 			<th>Property/Declaration</th>
@@ -210,7 +213,7 @@
 			<td><code>font-style: oblique 10deg;</code>
 				<div class="note">
 					"Positive angles represent a clockwise slant; negative angles represent a counter-clockwise slant." <a href="https://drafts.csswg.org/css-fonts-4/#font-style-prop">CSS&nbsp;fonts&nbsp;4</a>
-					<br> (It is unclear in the CSS spec whether this should artificially skew fonts that do not have a Slant axis, but such behavior suggests that the capability is native to the font, and therefore is inadvisable.)
+					
 				</div>
 			</td>
 			<td>
@@ -230,13 +233,13 @@
 			<td class="ital">
 				<span class="ital" style="font-style: oblique 10deg;">argvfonts</span>
 				<ul class="browser-result">
-					<li class="good" data-tooltip="No stylistic changes applied.">
+					<li class="maybe" data-tooltip="No stylistic changes applied, but it is unclear in the CSS Spec what should happen.">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-chrome"></use></svg>
 					</li>
-					<li class="bad" data-tooltip="Text artificially skewed by 10 degrees.">
+					<li class="maybe" data-tooltip="Text artificially skewed by 10 degrees, but it is unclear in the CSS Spec what should happen.">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-firefox"></use></svg>
 					</li>
-					<li class="good" data-tooltip="No stylistic changes applied.">
+					<li class="maybe" data-tooltip="No stylistic changes applied, but it is unclear in the CSS Spec what should happen.">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#icon-safari"></use></svg>
 					</li>
 				</ul>
@@ -356,10 +359,20 @@
 				</ul>
 			</td>
 		</tr>
-		
 	</table>
+	</div>
 
 	<div class="centered-col">
+		<h2>Unresolved case: what should happen for <code>oblique XXdeg</code> and fonts that have an <code>ital</code> axis?</h2>
+		<p>The CSS Spec isn't clear what should happen for <code>oblique XXdeg</code> with fonts that have an <code>ital</code> axis. Three possible results would be:</p>
+		<ol>
+			<li>No change applied.</li>
+			<li>Artificial skew applied.</li>
+			<li>Italic style activated, with full slope. This would make it equivalent to <code>oblique</code> with no specified angle.</li>
+		</ol>
+		<p>The <code>ital</code> axis doesn't support degree-based slanting, so it may be misleading to render such fonts with a slant. On the other hand, users may wish to skew text while keeping the behavior of text, so <code>transform: skewX()</code> wouldn't work, as it skews an entire element's overall "box".</p>
+		<p>Ultimately, this is a separate issue, and something that should be determined by the CSS Working Group.</p>
+
 		<h2>Relevant browser issues</h2>
 		<ul>
 			<li>

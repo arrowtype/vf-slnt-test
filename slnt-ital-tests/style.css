@@ -90,7 +90,11 @@ h1 {
 	font-family: 'RecVF', monospace;
 	font-weight: 1000;
 	font-variation-settings: 'CASL' 1;
-	margin: calc(2 * var(--pad)) 0;
+	margin: calc(2 * var(--pad)) 0 0;
+}
+
+h2 {
+	margin: calc(1.5* var(--pad)) 0 0;
 }
 
 p, li {
@@ -104,11 +108,19 @@ a {
 }
 
 .centered-col {
-	margin: 5rem auto;
+	margin: var(--pad) auto;
 	max-width: 800px;
 }
 
 /* table */
+
+.table-box {
+	margin: calc(2* var(--pad)) calc(-1 * var(--pad));
+	max-width: 100vw;
+	height: auto;
+	overflow-y: hidden;
+	overflow-x: auto;
+}
 
 table {
 	border-collapse: collapse;
@@ -145,9 +157,9 @@ table ul {
 }
 
 table .note {
-	max-width: 35ch;
+	max-width: 25ch;
 	font-size: 0.875em;
-	max-height: 4.75rem;
+	/* max-height: 4.75rem; */
 	overflow: auto;
 }
 
@@ -168,7 +180,7 @@ table li {
 }
 
 .browser-result li {
-	line-height: 1;
+	/* line-height: 1; */
 	margin:1rem 0.5rem 0 0;
 }
 
