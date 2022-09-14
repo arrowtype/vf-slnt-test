@@ -1,0 +1,356 @@
+@font-face {
+	font-family: 'Inter1';
+	font-style: oblique 0deg 15deg;
+	src: url('fonts/Inter.var.woff2');
+}
+@font-face {
+	font-family: 'RecVF';
+	font-weight: 300 1000;
+	font-style: oblique 0deg 15deg;
+	src: url('fonts/Recursive_VF_1.046--subset_range_english_basic.woff2');
+}
+
+
+@font-face {
+	font-family: 'TestVF-slnt';
+	font-style: oblique 0deg 15deg;
+	src: url('fonts/FontStyleTest-slnt-VF.woff2');
+}
+
+@font-face {
+	font-family: 'TestVF-slnt_ital';
+	font-style: oblique 0deg 15deg;
+	src: url('fonts/FontStyleTest-slnt_ital-VF.woff2');
+}
+
+@font-face {
+	font-family: 'TestVF-ital';
+	font-style: normal italic;
+	src: url('fonts/FontStyleTest-ital-VF.woff2');
+}
+
+@font-face {
+	font-family: 'TestVF-slnt_backslant';
+	font-style: oblique -15deg 15deg;
+	src: url('fonts/FontStyleTest-slnt_backslant-VF.woff2');
+}
+
+:root {
+	--pad: 2.5vw;
+	--good: hsl(180, 44%, 69%);
+	--goodText: hsl(180, 44%, 30%);
+	--bad: hsl(6, 69%, 51%);
+	--badText: hsl(6, 69%, 30%);
+}
+
+html {
+	box-sizing: border-box;
+	font-family: 'Inter1', sans-serif;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+code, pre {
+	font-family: 'RecVF', monospace;
+	font-variation-settings: 'CASL' 1, 'MONO' 1;
+	font-weight: inherit;
+	border-radius: 0.125em;
+	background: hsla(0, 0%, 0%, 0.075);
+	box-sizing: border-box;
+	overflow-x: auto;
+}
+
+
+.slnt {
+	font-family: 'TestVF-slnt';
+}
+.slnt_ital {
+	font-family: 'TestVF-slnt_ital';
+}
+.ital {
+	font-family: 'TestVF-ital';
+}
+.slnt_backslant {
+	font-family: 'TestVF-slnt_backslant';
+}
+
+body {
+	margin: 0;
+	width: 100vw;
+}
+
+main {
+	padding: var(--pad);
+	margin: 0 auto calc(2 * var(--pad));
+}
+
+h1 {
+	font-family: 'RecVF', monospace;
+	font-weight: 1000;
+	font-variation-settings: 'CASL' 1;
+	margin: calc(2 * var(--pad)) 0 0;
+}
+
+h2 {
+	margin: calc(1.5* var(--pad)) 0 0;
+}
+
+p, li {
+	max-width: 70ch;
+	line-height: 1.5;
+	margin-bottom: 1em;
+}
+
+a {
+	color: inherit;
+}
+
+.centered-col {
+	margin: var(--pad) auto;
+	max-width: 800px;
+}
+
+/* table */
+
+.table-box {
+	margin: calc(2* var(--pad)) calc(-1 * var(--pad));
+	max-width: 100vw;
+	height: auto;
+	overflow-y: hidden;
+	overflow-x: auto;
+}
+
+table {
+	border-collapse: collapse;
+	margin: 0 auto;
+	min-width: 1200px;
+	max-width: 1600px;
+}
+
+th {
+	background: #fbfbfb;
+}
+
+td, th {
+	border: 1px solid #ccc;
+	margin: 0;
+	padding: 1.5rem 1rem;
+	text-align: left;
+	vertical-align: top;
+}
+
+td code {
+	display: inline-block;
+	margin-bottom: 0.5rem;
+}
+
+td span {
+	font-size: 2rem;
+	line-height: 0.5;
+}
+
+table ul {
+	list-style: none;
+	padding-left: 0;
+}
+
+table .note {
+	max-width: 25ch;
+	font-size: 0.875em;
+	/* max-height: 4.75rem; */
+	overflow: auto;
+}
+
+/* END table */
+
+/* browser test results */
+
+table li {
+	font-family: sans-serif;
+	display: inline-block;
+	padding-right: 0.5rem;
+}
+
+.browser-result {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.browser-result li {
+	/* line-height: 1; */
+	margin:1rem 0.5rem 0 0;
+}
+
+[data-tooltip] {
+	position: relative;
+	cursor: help;
+}
+
+[data-tooltip]:before {
+	content: attr(data-tooltip);
+	visibility: hidden;
+	opacity: 0;
+	position: absolute;
+	padding: 0.5em;
+	border-radius: 0.25rem;
+	z-index: 2;
+	left: 0;
+	top: 110%;
+	width: 20ch;
+	background: white;
+	color: black;
+	line-height: 1.25;
+	box-shadow: 0 0.125rem 0.25rem currentColor;
+}
+
+[data-tooltip]:hover:before {
+	visibility: visible;
+	opacity: 1;
+}
+
+[data-tooltip].good:before {
+	border: var(--good) 2px solid;
+	color: var(--goodText);
+}
+
+[data-tooltip].bad:before {
+	border: var(--bad) 2px solid;
+	color: var(--badText);
+}
+
+.browser-result svg {
+	fill: currentColor;
+	position: relative;
+	top: 0.25rem;
+	width: 24px;
+	height: 24px;
+}
+
+.browser-result .good {
+	color: var(--good);
+	list-style: none;
+}
+.browser-result .good:after {
+	font-size: 1.5rem;
+	content: "✓";
+}
+
+.browser-result .bad {
+	color: var(--bad);
+	list-style: none;
+}
+.browser-result .bad:after {
+	font-size: 1.5rem;
+	content: "✗";
+	padding-right: 0.275rem;
+}
+
+.browser-result .maybe {
+	color: gray;
+	list-style: none;
+	font-weight: 600;
+}
+.browser-result .maybe:after {
+	font-size: 1.5rem;
+	content: "?";
+	padding-right: 0.275rem;
+}
+
+/* END browser test results */
+
+.test-text {
+	font-size: 3rem;
+}
+
+.test-note {
+	font-family: 'RecVF', sans-serif;
+	font-weight: 400;
+	font-variation-settings: 'CASL' 1;
+	color: red;
+	font-size: 0.375em;
+	color: #22f;
+	margin-top: calc(-1.25 * var(--pad));
+}
+
+@media (min-width: 1200px) {
+	.test-note {
+		margin-top: calc(-0.5 * var(--pad));
+	}
+}
+
+
+.test-expectation {
+	min-height: 4em;
+}
+
+.positive-oblique, .results {
+	font-family: 'Inter1', fantasy;
+}
+
+.negative-oblique {
+	font-family: 'Inter2', fantasy;
+}
+
+pre {
+	padding: 0.5em;
+}
+
+h1 code, h2 code, h3 code, p code, li code {
+	padding: 0 0.125em;
+}
+
+
+
+.comment {
+	font-variation-settings: 'MONO' 1, 'CASL' 1, 'slnt' -15;
+	color: #666;
+}
+
+
+/* test CSS */
+
+.italic {
+	font-style: italic;
+}
+
+.oblique {
+	font-style: oblique 10deg;
+}
+.oblique-only {
+	font-style: oblique;
+}
+
+.oblique-neg {
+	font-style: oblique -10deg;
+}
+
+.var-slnt {
+	font-variation-settings: 'slnt' -10;
+}
+
+.var-ital {
+	font-variation-settings: 'ital' 1;
+}
+
+/* footer */
+
+footer {
+	width: 100vw;
+	padding: var(--pad);
+	background: black;
+	color: #ccc;
+}
+
+footer .centered-col {
+	margin-top: 1rem;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(350px, auto));
+	grid-gap: var(--pad);
+}
+
+.colophon {
+	color: #888;
+}

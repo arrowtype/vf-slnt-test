@@ -1,0 +1,423 @@
+@font-face {
+  font-family: "Inter1";
+  font-style: oblique 0deg 15deg;
+  src: url("fonts/Inter.var.woff2");
+}
+@font-face {
+  font-family: "RecVF";
+  font-weight: 300 1000;
+  font-style: oblique 0deg 15deg;
+  src: url("fonts/Recursive_VF_1.046--subset_range_english_basic.woff2");
+}
+
+@font-face {
+  font-family: "TestVF-slnt";
+  font-style: oblique 0deg 15deg;
+  src: url("fonts/FontStyleTest-slnt-VF.woff2");
+}
+
+@font-face {
+  font-family: "TestVF-slnt_ital";
+  font-style: oblique 0deg 15deg;
+  src: url("fonts/FontStyleTest-slnt_ital-VF.woff2");
+}
+
+@font-face {
+  font-family: "TestVF-ital";
+  font-style: normal italic;
+  src: url("fonts/FontStyleTest-ital-VF.woff2");
+}
+
+@font-face {
+  font-family: "TestVF-slnt_backslant";
+  font-style: oblique -15deg 15deg;
+  src: url("fonts/FontStyleTest-slnt_backslant-VF.woff2");
+}
+
+:root {
+  --pad: 2.5vw;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: "Inter1", fantasy;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  width: 100vw;
+  background: black;
+}
+
+main {
+  padding: var(--pad);
+  margin: 0 auto calc(2 * var(--pad));
+  background: white;
+}
+
+h1 {
+	font-weight: normal;
+  font-variation-settings: 'wght' 900;
+  margin: calc(2 * var(--pad)) 0;
+}
+
+h1 code {
+	font-weight: normal;
+	font-variation-settings: 'wght' 900, 'MONO' 1;
+}
+
+h2, h3 {
+  margin-top: 2em;
+  font-weight: normal;
+  font-variation-settings: 'wght' 700;
+}
+
+b, .bold {
+	font-weight: normal;
+	font-variation-settings: 'wght' 700;
+}
+
+h3 {
+	margin-bottom: 1rem;
+}
+
+p,
+li {
+  max-width: 70ch;
+  line-height: 1.5;
+  margin-bottom: 1em;
+}
+
+a {
+  color: inherit;
+}
+
+.recursive {
+  font-family: "RecVF", fantasy;
+}
+
+.centered-col {
+  /* margin: 5rem auto; */
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 800px;
+}
+
+/* test styles */
+
+.test-text {
+  font-size: 8rem;
+  line-height: 0;
+  color: #22f;
+  mix-blend-mode: multiply;
+}
+
+.test-note {
+  font-family: "RecVF", sans-serif;
+  font-weight: 400;
+  font-variation-settings: "CASL" 1;
+  color: red;
+  font-size: 0.375em;
+  color: #22f;
+  margin-top: calc(-1.25 * var(--pad));
+}
+
+@media (min-width: 1200px) {
+  .test-note {
+    margin-top: calc(-0.5 * var(--pad));
+  }
+}
+
+.big {
+  font-size: 12vw;
+  text-align: center;
+  width: 100%;
+  line-height: 1em;
+}
+@media (min-width: 1200px) {
+  .big {
+    font-size: 144px;
+  }
+}
+
+.red {
+  color: rgb(255, 98, 171);
+}
+.blue {
+  color: rgb(6, 46, 107);
+}
+.blk {
+  color: rgb(0, 0, 0);
+  opacity: 0.8;
+}
+/* .overlap {
+  position: relative;
+  margin-top: 0em;
+  height: calc(12vw*1.25);
+}
+@media (min-width: 1200px) {
+	.overlap {
+	  height: calc(144px*1.25);
+	}
+  }
+.overlap p {
+  position: absolute;
+  top: 10%;
+  margin: 0;
+  mix-blend-mode: multiply;
+} */
+
+table .overlap {
+	position: relative;
+	height: 1em;
+}
+
+table .overlap span {
+	position: absolute;
+	margin: 0;
+	mix-blend-mode: multiply;
+	font-size: 1.5em;
+}
+
+/* test table fonts */
+
+
+/* table styles */
+
+.slnt {
+	font-family: 'TestVF-slnt';
+}
+.slnt_ital {
+	font-family: 'TestVF-slnt_ital';
+}
+.ital {
+	font-family: 'TestVF-ital';
+}
+.slnt_backslant {
+	font-family: 'TestVF-slnt_backslant';
+}
+
+/* test CSS */
+
+.italic {
+	font-style: italic;
+}
+
+.oblique {
+	font-style: oblique 10deg;
+}
+.oblique-only {
+	font-style: oblique;
+}
+
+.oblique-neg {
+	font-style: oblique -10deg;
+}
+
+.var-slnt {
+	font-variation-settings: 'slnt' -10;
+}
+
+.var-ital {
+	font-variation-settings: 'ital' 1;
+}
+
+
+
+/* table */
+
+.table-box {
+	margin: calc(0.5* var(--pad)) calc(-1 * var(--pad));
+	margin-left: calc(-1 * var(--pad));
+	margin-right: calc(-1 * var(--pad));
+	max-width: 100vw;
+	height: auto;
+	overflow-y: hidden;
+	overflow-x: auto;
+}
+
+table {
+	border-collapse: collapse;
+	margin: 0 auto;
+	min-width: 1200px;
+	max-width: 1600px;
+}
+
+h3.table-label {
+	display: block;
+	margin: .5rem auto;
+	width: 1200px;
+}
+
+th {
+	background: #fbfbfb;
+	font-weight: normal;
+  	font-variation-settings: 'wght' 700;
+}
+
+td, th {
+	border: 1px solid #ccc;
+	margin: 0;
+	padding: 1rem;
+	text-align: left;
+	vertical-align: middle;
+}
+
+.summary td, .summary th {
+	padding: .25rem 1rem;
+	vertical-align: middle;
+	text-align: center;
+	height: 1rem;
+	box-sizing: border-box;
+}
+
+.summary code {
+	padding: 0;
+}
+
+.summary td:first-of-type,
+.summary th:first-of-type {
+	text-align: left;
+}
+
+td span {
+	font-size: 2rem;
+	line-height: 0.5;
+}
+
+td p {
+	margin:0;
+}
+
+table ul {
+	list-style: none;
+	padding-left: 0;
+}
+
+table .note {
+	max-width: 25ch;
+	font-size: 0.875em;
+	/* max-height: 4.75rem; */
+	overflow: auto;
+}
+
+/* results styles */
+
+.browser-result {
+  font-size: 0.375em;
+}
+
+.browser-result.good {
+  color: teal;
+  list-style: none;
+}
+.browser-result.good:before {
+  content: "✔ ";
+}
+
+.browser-result.bad {
+  color: red;
+  list-style: none;
+}
+.browser-result.bad:before {
+  content: "🆇 ";
+}
+
+.wrong {
+  color: #aa2222;
+}
+
+.test-expectation {
+  min-height: 4em;
+}
+
+.positive-oblique,
+.results {
+  font-family: "Inter1", fantasy;
+}
+
+.negative-oblique {
+  font-family: "Inter2", fantasy;
+}
+
+pre {
+  padding: 0.5em;
+}
+
+h1 code,
+h2 code,
+h3 code,
+p code,
+li code {
+  padding: 0 0.125em;
+}
+
+code,
+pre {
+  font-family: "RecVF", monospace;
+  font-variation-settings: "MONO" 1, "CASL" 1;
+  border-radius: 0.125em;
+  background: #eeeeee;
+  box-sizing: border-box;
+  overflow-x: auto;
+}
+
+code {
+  background: #e8f3ff;
+}
+
+.comment {
+  font-variation-settings: "MONO" 1, "CASL" 1, "slnt" -15;
+  color: #666;
+}
+
+/* test CSS */
+
+.italic {
+  font-style: italic;
+}
+
+.oblique {
+  font-style: oblique 10deg;
+}
+.oblique-only {
+  font-style: oblique;
+}
+
+.oblique-neg {
+  font-style: oblique -10deg;
+}
+
+.var-slnt {
+  font-variation-settings: "slnt" -10;
+}
+
+.var-ital {
+  font-variation-settings: "ital" 1;
+}
+
+/* footer */
+
+footer {
+  width: 100vw;
+  padding: var(--pad);
+  background: black;
+  color: #ccc;
+}
+
+footer .centered-col {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, auto));
+  grid-gap: var(--pad);
+}
+
+.colophon {
+  color: #888;
+}

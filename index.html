@@ -1,65 +1,557 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>VF Slant Test</title>
-	<link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-	<main>
-
-
-		<div class="centered-col">
-			<p style="background: yellow;">UPDATE: for an updated test page, please see <a href="slnt-ital-tests/index.html">the slnt and ital test table</a>.</p>
-			<h1>Browser Test: <code>font-style</code> for Italic axis in OpenType variable fonts</h1>
-			<p>A test page to determine whether browsers meet the <a href="https://drafts.csswg.org/css-fonts-4/#font-style-prop">CSS Spec for font-style</a>.</p>
-		</div>
-	
-
-	<section class="tests centered-col">
-
-	<div class="positive-oblique">
-		<h2>Test: positive oblique in <code>@font-face</code></h2>
-			<pre>
-@font-face {
-  font-family: 'Inter';           <slnt class="comment">/* has negative slnt values, per OT spec */</slnt>
-  font-weight: 100 900;
-  font-style: oblique 0deg 10deg; <slnt class="comment">/* has positive top value, per CSS spec */</slnt>
-  src: url('fonts/Inter.var.ttf');
-}</pre>
-		<p class="test-expectation">All following elements should be clockwise-slanted (“forward-leaning”), except for <code>font-style: oblique -10deg;</code>, which provides a value outside the font's Slant axis range.</p>
-		<div class="test-text recursive">
-			<p class="var-ital">font-variation-settings: 'ital' 1;</p>
-			<p class="test-note">Should have a clockwise slant. Works correctly in most modern browsers.</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>VF Slant Test</title>
+    <link rel="stylesheet" href="style-2022.css" />
+  </head>
+  <body>
+    <main>
+      <div class="centered-col">
+        <h1>Browser support for <code>slnt</code> and <code>ital</code> axes in variable fonts</h1>
+        <p>
+          A test page to determine whether browsers meet the
+          <a href="https://drafts.csswg.org/css-fonts-4/#font-style-prop">CSS Spec for font-style</a>.
+        </p>
+        <!-- <p>Test data across multiple browsers, for support of slnt and ital axes:</p>
 			<ul>
-				<li class="browser-result good">Chrome</li>
-				<li class="browser-result good">Safari</li>
-				<li class="browser-result good">Firefox</li>
-			</ul>
-			<p class="oblique-only">font-style: oblique;</p>
-			<p class="test-note">Should have a clockwise slant matching font-variation-settings example above.</p>
-				<ul>
-					<li class="browser-result bad">Chrome</li>
-					<li class="browser-result bad">Safari</li>
-					<li class="browser-result bad">Firefox</li>
-				</ul>
-			<p class="oblique">font-style: oblique 10deg;</p>
-			<p class="test-note">Should have a clockwise slant matching font-variation-settings example above.</p>
-			<p class="italic">font-style: italic;</p>
-			<p class="test-note">Should have a clockwise slant matching font-variation-settings example above.</p>
-			<p class="italic"><i>&lt;i&gt;</i></p>
-			<p class="test-note">Should have a clockwise slant matching font-variation-settings example above.</p>
-			<p class="oblique-neg">font-style: oblique -10deg;</p>
-			<p class="test-note wrong">Incorrect for most fonts unless they include a “backslant”</p>
+				<li><a style="background-color: yellow;" href="../slnt-ital-tests-2022_09/index.html">2022, September (latest)</a> </li>
+				<li><a href="slnt-ital-tests/">2020, March</a></p></li>
+			</ul> -->
+        <h2>Test table for your current browser</h2>
+        <p class="red bold">Control tests / expected results in pink.</p>
+        <p>
+          If you see mismatched overlap and pink in a table cell, that test is failing in your current browser. If you don’t see pink in a cell, that
+          test is performing as expected (and therefore covering the background control).
+        </p>
+      </div>
+
+      <section>
+        <div class="table-box">
+          <table>
+            <tr>
+              <th>Property and Value</th>
+              <th>Font with <code>slnt</code>, 0 to -15</th>
+              <th>Font with <code>ital</code>, 0 to 1</th>
+              <th>Font with <code>slnt</code>, 15 to -15</th>
+            </tr>
+            <tr>
+              <td>
+                <code>font-variation-settings</code>
+                <div class="note">
+                  (Control tests – should have no visible pink background text.) Low-level control of variable font axes.
+                  <a href="https://caniuse.com/variable-fonts">Works well in most modern browsers.</a>
+                </div>
+              </td>
+              <td>
+                <span class="slnt">
+                  <div class="overlap">
+                    <span class="red" style="font-variation-settings: 'slnt' -15">varfont</span>
+                    <span class="blue" style="font-variation-settings: 'slnt' -15">varfont</span>
+                  </div>
+                </span>
+                <br />
+                <code>'slnt' -15;</code>
+              </td>
+              <td class="ital">
+                <span class="ital">
+                  <div class="overlap">
+                    <span class="red" style="font-variation-settings: 'ital' 1">varfont</span>
+                    <span class="blue" style="font-variation-settings: 'ital' 1">varfont</span>
+                  </div>
+                </span>
+                <br />
+                <code>'ital' 1;</code>
+              </td>
+              <td>
+                <span class="slnt_backslant">
+                  <div class="overlap">
+                    <span class="red" style="font-variation-settings: 'slnt' 15">varfont</span>
+                    <span class="blue" style="font-variation-settings: 'slnt' 15">varfont</span>
+                  </div>
+                </span>
+                <br />
+                <code>'slnt' 15;</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code>font-style: italic;</code>
+                <div class="note">
+                  "Matches against a font that is labeled as an italic face, or an oblique face if one does not exist."
+                  <a href="https://drafts.csswg.org/css-fonts-4/#font-style-prop">CSS Fonts 4</a>
+                </div>
+              </td>
+              <td>
+                <span class="slnt">
+                  <div class="overlap">
+                    <span class="red" style="font-variation-settings: 'slnt' -15">varfont</span>
+                    <span class="blue" style="font-style: italic">varfont</span>
+                  </div>
+                </span>
+              </td>
+              <td class="ital">
+                <span class="ital">
+                  <div class="overlap">
+                    <span class="red" style="font-variation-settings: 'ital' 1">varfont</span>
+                    <span class="blue" style="font-style: italic">varfont</span>
+                  </div>
+                </span>
+              </td>
+              <td>
+                <span class="slnt_backslant">
+                  <div class="overlap">
+                    <span class="red" style="font-variation-settings: 'slnt' -15">varfont</span>
+                    <span class="blue" style="font-style: italic">varfont</span>
+                  </div>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code>font-style: oblique;</code>
+                <div class="note">
+                  "Selects a font that is labeled as an oblique face, or an italic face if one is not."
+                  <a href="https://drafts.csswg.org/css-fonts-3/#font-style-prop">CSS&nbsp;fonts&nbsp;3</a>
+                </div>
+              </td>
+              <td>
+                <span class="slnt">
+                  <div class="overlap">
+                    <span class="red" style="font-variation-settings: 'slnt' -15">varfont</span>
+                    <span class="blue" style="font-style: oblique">varfont</span>
+                  </div>
+                </span>
+              </td>
+              <td class="ital">
+                <span class="ital">
+                  <div class="overlap">
+                    <span class="red" style="font-variation-settings: 'ital' 1">varfont</span>
+                    <span class="blue" style="font-style: oblique">varfont</span>
+                  </div>
+                </span>
+              </td>
+              <td>
+                <span class="slnt_backslant">
+                  <div class="overlap">
+                    <span class="red" style="font-variation-settings: 'slnt' -15">varfont</span>
+                    <span class="blue" style="font-style: oblique">varfont</span>
+                  </div>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code>font-style: oblique 10deg;</code>
+                <div class="note">
+                  "Positive angles represent a clockwise slant; negative angles represent a counter-clockwise slant." (The “10deg” value should be flipped to -10 for a slnt axis.)
+                  <a href="https://drafts.csswg.org/css-fonts-4/#font-style-prop">CSS&nbsp;fonts&nbsp;4</a>
+                </div>
+              </td>
+              <td>
+                <span class="slnt">
+                  <div class="overlap">
+                    <span class="red" style="font-variation-settings: 'slnt' -10">varfont</span>
+                    <span class="blue" style="font-style: oblique 10deg">varfont</span>
+                  </div>
+                </span>
+              </td>
+              <td class="ital">
+                <span class="ital">
+                  <div class="overlap">
+                    <span class="red" style="font-variation-settings: 'ital' 0">varfont</span>
+                    <span class="blue" style="font-style: oblique 10deg">varfont</span>
+                  </div>
+                </span>
+              </td>
+              <td>
+                <span class="slnt_backslant">
+                  <div class="overlap">
+                    <span class="red" style="font-variation-settings: 'slnt' -10">varfont</span>
+                    <span class="blue" style="font-style: oblique 10deg">varfont</span>
+                  </div>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><code>&lt;i&gt;</code> HTML element</p>
+                <div class="note">
+                  "Selects a font that is labeled as an oblique face, or an italic face if one is not."
+                  <a href="https://drafts.csswg.org/css-fonts-3/#font-style-prop">CSS&nbsp;fonts&nbsp;3</a> The
+                  <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-em-element">&lt;em&gt;</a> tag may work differently
+                  depending on the language.
+                </div>
+              </td>
+              <td>
+                <span class="slnt">
+                  <div class="overlap">
+                    <span class="red" style="font-variation-settings: 'slnt' -15">varfont</span>
+                    <span class="blue"><i>varfont</i></span>
+                  </div>
+                </span>
+              </td>
+              <td class="ital">
+                <span class="ital">
+                  <div class="overlap">
+                    <span class="red" style="font-variation-settings: 'ital' 1">varfont</span>
+                    <span class="blue"><i>varfont</i></span>
+                  </div>
+                </span>
+              </td>
+              <td>
+                <span class="slnt_backslant">
+                  <div class="overlap">
+                    <span class="red" style="font-variation-settings: 'slnt' -15">varfont</span>
+                    <span class="blue"><i>varfont</i></span>
+                  </div>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code>font-style: oblique -10deg;</code>
+                <div class="note">
+                  Rare case; will only work with fonts that include "backslanted" styles. "Negative angles represent a counter-clockwise slant."
+                  <a href="https://drafts.csswg.org/css-fonts-4/#font-style-prop">CSS&nbsp;fonts&nbsp;4</a>.
+                </div>
+              </td>
+              <td>
+                <span class="slnt">
+                  <div class="overlap">
+                    <span class="red" style="font-variation-settings: 'slnt' 10">varfont</span>
+                    <span class="blue" style="font-style: oblique -10deg">varfont</span>
+                  </div>
+                </span>
+              </td>
+              <td class="ital">
+                <span class="ital">
+                  <div class="overlap">
+                    <span class="red" style="font-variation-settings: 'slnt' 10">varfont</span>
+                    <span class="blue" style="font-style: oblique -10deg">varfont</span>
+                  </div>
+                </span>
+              </td>
+              <td>
+                <span class="slnt_backslant">
+                  <div class="overlap">
+                    <span class="red" style="font-variation-settings: 'slnt' 10">varfont</span>
+                    <span class="blue" style="font-style: oblique -10deg">varfont</span>
+                  </div>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </section>
+
+	<section>
+		<h2 class="centered-col">Browser Results, as of September 14, 2022</h2>
+		
+		<div class="table-box">
+		<h3 class="table-label">Safari – Technology Preview, Release 149 (Safari 16.0, WebKit 17614.1.19.1.5)</h3>
+		<table class="summary">
+			<tr>
+			<th>Property and Value</th>
+			<th>Font with <code>slnt</code>, 0 to -15</th>
+			<th>Font with <code>ital</code>, 0 to 1</th>
+			<th>Font with <code>slnt</code>, 15 to -15</th>
+		  </tr>
+		  <tr>
+			<td>
+			  <code>font-variation-settings</code>
+			</td>
+			<td>
+				<p>✅</p>
+			</td>
+			<td class="ital">
+				<p>✅</p>
+			</td>
+			<td>
+				<p>✅</p>
+			</td>
+		  </tr>
+		  <tr>
+			<td>
+			  <code>font-style: italic;</code>
+			</td>
+			<td>
+				<p>❌</p>
+			</td>
+			<td class="ital">
+				<p>❌</p>
+			</td>
+			<td>
+				<p>❌</p>
+			</td>
+		  </tr>
+		  <tr>
+			<td>
+			  <code>font-style: oblique;</code>
+			</td>
+			<td>
+				<p>❌</p>
+			</td>
+			<td class="ital">
+				<p>❌</p>
+			</td>
+			<td>
+				<p>❌</p>
+			</td>
+		  </tr>
+		  <tr>
+			<td>
+			  <code>font-style: oblique 10deg;</code>
+			</td>
+			<td>
+				<p>❌</p>
+			</td>
+			<td class="ital">
+				<p>✅</p>
+			</td>
+			<td>
+				<p>❌</p>
+			</td>
+		  </tr>
+		  <tr>
+			<td>
+			  <p><code>&lt;i&gt;</code> HTML element</p>
+			</td>
+			<td>
+				<p>❌</p>
+			</td>
+			<td class="ital">
+				<p>❌</p>
+			</td>
+			<td>
+				<p>❌</p>
+			</td>
+		  </tr>
+		  <tr>
+			<td>
+			  <code>font-style: oblique -10deg;</code>
+			</td>
+			<td>
+				<p>❌</p>
+			</td>
+			<td class="ital">
+				<p>✅</p>
+			</td>
+			<td>
+				<p>❌</p>
+			</td>
+		  </tr>
+		</table>
 		</div>
-	</div>
 
-</section>
+		<div class="table-box">
+			<h3 class="table-label">Firefox – Nightly, 106.0a1 (2022-09-14)</h3>
+			<table class="summary">
+				<tr>
+				<th>Property and Value</th>
+				<th>Font with <code>slnt</code>, 0 to -15</th>
+				<th>Font with <code>ital</code>, 0 to 1</th>
+				<th>Font with <code>slnt</code>, 15 to -15</th>
+			  </tr>
+			  <tr>
+				<td>
+				  <code>font-variation-settings</code>
+				</td>
+				<td>
+					<p>✅</p>
+				</td>
+				<td class="ital">
+					<p>✅</p>
+				</td>
+				<td>
+					<p>✅</p>
+				</td>
+			  </tr>
+			  <tr>
+				<td>
+				  <code>font-style: italic;</code>
+				</td>
+				<td>
+					<p>✅</p>
+				</td>
+				<td class="ital">
+					<p>✅</p>
+				</td>
+				<td>
+					<p>✅</p>
+				</td>
+			  </tr>
+			  <tr>
+				<td>
+				  <code>font-style: oblique;</code>
+				</td>
+				<td>
+					<p>✅</p>
+				</td>
+				<td class="ital">
+					<p>❌</p>
+				</td>
+				<td>
+					<p>✅</p>
+				</td>
+			  </tr>
+			  <tr>
+				<td>
+				  <code>font-style: oblique 10deg;</code>
+				</td>
+				<td>
+					<p>✅</p>
+				</td>
+				<td class="ital">
+					<p>❌</p>
+				</td>
+				<td>
+					<p>✅</p>
+				</td>
+			  </tr>
+			  <tr>
+				<td>
+				  <p><code>&lt;i&gt;</code> HTML element</p>
+				</td>
+				<td>
+					<p>✅</p>
+				</td>
+				<td class="ital">
+					<p>✅</p>
+				</td>
+				<td>
+					<p>✅</p>
+				</td>
+			  </tr>
+			  <tr>
+				<td>
+				  <code>font-style: oblique -10deg;</code>
+				</td>
+				<td>
+					<p>✅</p>
+				</td>
+				<td class="ital">
+					<p>❌</p>
+				</td>
+				<td>
+					<p>✅</p>
+				</td>
+			  </tr>
+			</table>
+		</div>
 
-<section class="centered-col">
+		<div class="table-box">
+			<h3 class="table-label">Chrome – Canary, Version 107.0.5301.0 (Official Build) canary (x86_64)</h3>
+			<table class="summary">
+				<tr>
+				<th>Property and Value</th>
+				<th>Font with <code>slnt</code>, 0 to -15</th>
+				<th>Font with <code>ital</code>, 0 to 1</th>
+				<th>Font with <code>slnt</code>, 15 to -15</th>
+			  </tr>
+			  <tr>
+				<td>
+				  <code>font-variation-settings</code>
+				</td>
+				<td>
+					<p>✅</p>
+				</td>
+				<td class="ital">
+					<p>✅</p>
+				</td>
+				<td>
+					<p>✅</p>
+				</td>
+			  </tr>
+			  <tr>
+				<td>
+				  <code>font-style: italic;</code>
+				</td>
+				<td>
+					<p>❌</p>
+				</td>
+				<td class="ital">
+					<p>❌</p>
+				</td>
+				<td>
+					<p>❌</p>
+				</td>
+			  </tr>
+			  <tr>
+				<td>
+				  <code>font-style: oblique;</code>
+				</td>
+				<td>
+					<p>❌</p>
+				</td>
+				<td class="ital">
+					<p>❌</p>
+				</td>
+				<td>
+					<p>❌</p>
+				</td>
+			  </tr>
+			  <tr>
+				<td>
+				  <code>font-style: oblique 10deg;</code>
+				</td>
+				<td>
+					<p>✅</p>
+				</td>
+				<td class="ital">
+					<p>✅</p>
+				</td>
+				<td>
+					<p>✅</p>
+				</td>
+			  </tr>
+			  <tr>
+				<td>
+				  <p><code>&lt;i&gt;</code> HTML element</p>
+				</td>
+				<td>
+					<p>❌</p>
+				</td>
+				<td class="ital">
+					<p>❌</p>
+				</td>
+				<td>
+					<p>❌</p>
+				</td>
+			  </tr>
+			  <tr>
+				<td>
+				  <code>font-style: oblique -10deg;</code>
+				</td>
+				<td>
+					<p>✅</p>
+				</td>
+				<td class="ital">
+					<p>✅</p>
+				</td>
+				<td>
+					<p>✅</p>
+				</td>
+			  </tr>
+			</table>
+		</div>
+
+	</section>
+
+
+	<section>
+		<h2 class="centered-col">Historical browser results</h2>
+		<details>
+			<summary class="centered-col"><b><!-------->Historical results as of March 24, 2020<!--------></b> (Click to expand)</summary>
+			
+			<p>(TODO)</p>
+			
+			</details>
+	</section>
+
+      <!-- <section class="centered-col">
 	<h2>Expected behavior</h2>
 	<p>
 		Variable fonts with negative, clockwise-sloping Slant axis values should be possible to control via CSS with a positive value of oblique (<a href="https://drafts.csswg.org/css-fonts-4/#font-style-prop">CSS Spec, font-style</a>). For example, CSS such as <code>font-style: oblique 10deg;</code> should result in clockwise-slanting text when the font has a slnt axis with values 0 to -10 (as required by <a href="https://docs.microsoft.com/en-us/typography/opentype/spec/dvaraxistag_slnt">the OpenType spec</a>: “a typical, right-leaning oblique design will have a negative slant value”).
@@ -67,10 +559,9 @@
 	<p>
 		Additionally, <code>font-style:italic</code> should activate the Slant axis if an Italic axis is not present. <a href="https://drafts.csswg.org/css-fonts-4/#valdef-font-style-italic">Per the CSS Spec</a>: “Italic: Matches against a font that is labeled as an italic face, or an oblique face if one does not exist ...For TrueType / OpenType fonts that use variations, the slnt variation is used to implement oblique values.” 
 	</p>
-</section>
+</section> -->
 
-
-<section class="results centered-col">
+      <!-- <section class="results centered-col">
 	<h2>Results as of Jan 30, 2020</h2>
 	All tested browsers support <code>font-variation-settings: 'slnt' -10</code>, but accurate support for <code>font-style: oblique</code> and <code>font-style: italic</code> is sparse. As tested on macOS, Windows, iOS, and Android:
 	<ul>
@@ -82,16 +573,14 @@
 	<p>
 		Note: both Chrome and Firefox appear to work well if a variable font has a clockwise slant with a *positive* value; however, fonts using this approach contradict the OpenType spec and therefore do not provide a valid test case.
 	</p>	
-</section>
+</section> -->
+    </main>
 
-</main>
-
-<footer>
-	<div class="centered-col">
-		<p>Test source: <a href="https://github.com/arrowtype/vf-slnt-test">github.com/arrowtype/vf-slnt-test</a></p>
-		<p class="colophon">Fonts: <a href="github.com/rsms/inter">Inter</a> & <a href="github.com/arrowtype/recursive">Recursive</a></p>
-	</div>
-</footer>
-	
-</body>
+    <footer>
+      <div class="centered-col">
+        <p>Test source: <a href="https://github.com/arrowtype/vf-slnt-test">github.com/arrowtype/vf-slnt-test</a></p>
+        <p class="colophon">Fonts: <a href="github.com/rsms/inter">Inter</a> & <a href="github.com/arrowtype/recursive">Recursive</a></p>
+      </div>
+    </footer>
+  </body>
 </html>

@@ -2,14 +2,14 @@
 	font-family: 'Inter1';
 	font-weight: 100 900;
 	font-style: oblique 0deg 10deg;
-	src: url('fonts/Inter.var.ttf');
+	src: url('fonts/Inter.var.woff2');
 }
 
 @font-face {
 	font-family: 'Inter2';
 	font-weight: 100 900;
 	font-style: oblique 0deg -10deg;
-	src: url('fonts/Inter.var.ttf');
+	src: url('fonts/Inter.var.woff2');
 }
 
 @font-face {
