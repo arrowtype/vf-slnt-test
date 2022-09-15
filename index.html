@@ -8,6 +8,13 @@
     <link rel="stylesheet" href="style-2022.css" />
   </head>
   <body>
+	<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" style="display: none;">
+		<g id="icon--download" fill="none" fill-rule="evenodd" stroke-linecap="round">
+		  <polyline stroke="#000000" stroke-linejoin="round" stroke-width="3" points="4 22 4 28 28 28 28 22"/>
+		  <line x1="16" x2="16" y1="4" y2="20" stroke="#000000" stroke-width="3"/>
+		  <polyline stroke="#000000" stroke-linejoin="round" stroke-width="3" points="8 12 16 20 24 12"/>
+		</g>
+	  </svg>
     <main>
       <div class="centered-col">
         <h1>Testing browser support for <code>slnt</code> and <code>ital</code> axes in variable fonts</h1>
@@ -15,19 +22,15 @@
           The following is a test page to determine whether browsers meet the
           <a href="https://drafts.csswg.org/css-fonts-4/#font-style-prop">CSS Spec for font-style</a>. It includes a current testing table, as well as historical data for browser results.
         </p>
-        <!-- <p>Test data across multiple browsers, for support of slnt and ital axes:</p>
-			<ul>
-				<li><a style="background-color: yellow;" href="../slnt-ital-tests-2022_09/index.html">2022, September (latest)</a> </li>
-				<li><a href="slnt-ital-tests/">2020, March</a></p></li>
-			</ul> -->
         <h2>Test table for your current browser</h2>
 		<p>Notes:</p>
 		<ul>
 			<li><span class="red bold">Control tests / expected results are in pink.</span> If you see mismatched overlap and pink in a table cell, that test is failing in your current browser. If you don’t see pink in a cell, that test is performing as expected (and therefore covering the background control).</li>
+			<li>If you’re like to test a font locally, click its <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><use xlink:href="#icon--download"></use></svg> icon to download it. Two useful font testing tools are <a href="https://fontgoggles.org/">Font Goggles</a> and <a href="https://wakamaifondue.com/beta/">Wakamai Fondue</a>.</li>
 			<li>A test can fail in two primary ways:
 				<ul>
 					<li>The slant can be wrong – either too little too much.</li>
-					<li>The font can be missing required alternates for the given style (Required Variation Alternates, <code>rvrn</code>). In this case, the slant might be correct, but the letterforms are incorrect. For example, the expected result may have a single-story a, while the actual test result has a slanted double-story a.</li>
+					<li>The font can be missing required alternates for the given style (Required Variation Alternates, <code>rvrn</code>). In this case, the slant might be correct, but the letterforms are incorrect. For example, the expected result may have a single-story <span class="recursive" style="font-variation-settings: 'CRSV' 1;">a</span> and italic <span class="recursive" style="font-variation-settings: 'CRSV' 1, 'MONO' 1;">f</span>, while the actual test result has a slanted double-story <span class="recursive" style="font-variation-settings: 'CRSV' 0;">a</span> and monospace <span class="recursive" style="font-variation-settings: 'CRSV' 0, 'MONO' 1;">f</span>.</li>
 				</ul>
 			</li>
 		</ul>
@@ -39,10 +42,37 @@
         <div class="table-box">
           <table>
             <tr>
-              <th>Property and Value</th>
-              <th>Font with <code>slnt</code>, 0 to -15</th>
-              <th>Font with <code>ital</code>, 0 to 1</th>
-              <th>Font with <code>slnt</code>, 15 to -15</th>
+              <th>Style Tested</th>
+              <th>
+				<div>
+					<p>
+						Font with <code>slnt</code>, 0 to -15
+					</p>
+					<a href="fonts/FontStyleTest-slnt-VF.woff2">
+						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><use xlink:href="#icon--download"></use></svg>
+					</a>
+				</div>
+				</th>
+              <th>
+				<div>
+					<p>
+						Font with <code>ital</code>, 0 to 1
+					</p>
+					<a href="fonts/FontStyleTest-ital-VF.woff2">
+						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><use xlink:href="#icon--download"></use></svg>
+					</a>
+				</div>
+			</th>
+              <th>
+				<div>
+					<p>
+						Font with <code>slnt</code>, 15 to -15
+					</p>
+					<a href="fonts/FontStyleTest-slnt_backslant-VF.woff2">
+						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><use xlink:href="#icon--download"></use></svg>
+					</a>
+				</div>
+			</th>
             </tr>
             <tr>
               <td>
@@ -269,7 +299,7 @@
 			<h3 class="table-label">Chrome – Canary, Version 107.0.5301.0 (x86_64)</h3>
 			<table class="summary">
 				<tr>
-				<th>Property and Value</th>
+				<th>Style Tested</th>
 				<th>Font with <code>slnt</code>, 0 to -15</th>
 				<th>Font with <code>ital</code>, 0 to 1</th>
 				<th>Font with <code>slnt</code>, 15 to -15</th>
@@ -365,7 +395,7 @@
 		<h3 class="table-label">Safari – Technology Preview, Release 149 (Safari 16.0, WebKit 17614.1.19.1.5)</h3>
 		<table class="summary">
 			<tr>
-			<th>Property and Value</th>
+			<th>Style Tested</th>
 			<th>Font with <code>slnt</code>, 0 to -15</th>
 			<th>Font with <code>ital</code>, 0 to 1</th>
 			<th>Font with <code>slnt</code>, 15 to -15</th>
@@ -461,7 +491,7 @@
 			<h3 class="table-label">Firefox – Nightly, 106.0a1 (2022-09-14)</h3>
 			<table class="summary">
 				<tr>
-				<th>Property and Value</th>
+				<th>Style Tested</th>
 				<th>Font with <code>slnt</code>, 0 to -15</th>
 				<th>Font with <code>ital</code>, 0 to 1</th>
 				<th>Font with <code>slnt</code>, 15 to -15</th>
@@ -573,7 +603,7 @@
 			<h3 class="table-label">Chrome – Canary, Version 83.0.4094.0</h3>
 			<table class="summary">
 				<tr>
-				<th>Property and Value</th>
+				<th>Style Tested</th>
 				<th>Font with <code>slnt</code>, 0 to -15</th>
 				<th>Font with <code>ital</code>, 0 to 1</th>
 				<th>Font with <code>slnt</code>, 15 to -15</th>
@@ -669,7 +699,7 @@
 			<h3 class="table-label">Safari – Technology Preview, Release 102 (Safari 13.2, WebKit 15610.1.5.2)</h3>
 			<table class="summary">
 				<tr>
-				<th>Property and Value</th>
+				<th>Style Tested</th>
 				<th>Font with <code>slnt</code>, 0 to -15</th>
 				<th>Font with <code>ital</code>, 0 to 1</th>
 				<th>Font with <code>slnt</code>, 15 to -15</th>
@@ -765,7 +795,7 @@
 			<h3 class="table-label">Firefox – Nightly, Version 76.0a1 (2020-03-23)</h3>
 			<table class="summary">
 				<tr>
-				<th>Property and Value</th>
+				<th>Style Tested</th>
 				<th>Font with <code>slnt</code>, 0 to -15</th>
 				<th>Font with <code>ital</code>, 0 to 1</th>
 				<th>Font with <code>slnt</code>, 15 to -15</th>

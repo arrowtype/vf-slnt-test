@@ -219,6 +219,11 @@ table .overlap span {
 	font-variation-settings: 'ital' 1;
 }
 
+li svg {
+	display: inline;
+	width: 1rem;
+	transform: translateY(0.125rem);
+}
 
 
 /* table */
@@ -250,6 +255,22 @@ th {
 	background: #fbfbfb;
 	font-weight: normal;
   	font-variation-settings: 'wght' 700;
+	vertical-align: middle;
+}
+
+th div {
+	display: flex;
+	padding: 0;
+	justify-content: space-between;
+	align-items: center;
+}
+
+th p {
+	margin: 0;
+}
+
+th svg {
+	width: 1.5rem;
 }
 
 td, th {
