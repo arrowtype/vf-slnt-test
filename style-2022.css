@@ -271,7 +271,14 @@ th p {
 
 th svg {
 	width: 1.5rem;
+	opacity: 0.65;
 }
+
+th a:hover svg {
+	opacity: 1;
+	transition: 0.25s;
+}
+
 
 td, th {
 	border: 1px solid #ccc;
