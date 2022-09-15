@@ -165,16 +165,7 @@ li > ul {
   mix-blend-mode: multiply;
 } */
 
-table .overlap {
-	position: relative;
-	height: 1em;
-}
 
-table .overlap span {
-	position: absolute;
-	margin: 0;
-	font-size: 1.5em;
-}
 
 /* test table fonts */
 
@@ -245,10 +236,41 @@ table {
 	max-width: 1600px;
 }
 
+table .overlap {
+	position: relative;
+	height: 1em;
+}
+
+table .overlap span {
+	position: absolute;
+	margin: 0;
+	font-size: 1.5em;
+}
+
+
+
 h3.table-label {
 	display: block;
 	margin: .5rem auto;
 	width: 1200px;
+}
+
+@media (max-width: 1200px) {
+	table {
+	  font-size: 75%;
+    width: 100%;
+    min-width: 600px;
+	}
+  table .overlap span {
+    font-size: 1.5rem;
+  }
+  h3.table-label {
+    font-size: 1rem;
+    margin-top: 2rem;
+    margin-left:0;
+    padding-left: 0rem;
+    width: 100%;
+  }
 }
 
 th {
