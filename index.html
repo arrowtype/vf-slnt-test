@@ -291,8 +291,8 @@
 			<p>Notes:</p>
 			<ul>
 				<li>The following tests were performed on a 2019 MacBook Pro, with an Intel chip and macOS 12.5, if that is relevant.</li>
-				<li>Safari and Firefox have seemingly not changed support here, since prior testing in March 2020. Chrome has actually <i>regressed</i>. See historical data further below or in <a href="slnt-ital-tests/index.html">the original testing page</a>.</li>
-				<li>The CSS Level 4 spec is unclear what should be done for the value <code>font-style: oblique ±XXdeg</code> in a variable font which only has an <code>ital</code> axis or a <code>slnt</code> axis that doesn’t include the requested value. As of these tests, Firefox applies a synthetic slant, while Safari & Chrome apply no slant. And thus, this test is rated as 🤷 for all three browsers. (Author’s opinion: Firefox is making the right call here, but that it would likely be the wrong styling for many scripts other than Latin.)</li>
+				<li>Safari and Firefox have seemingly not changed support here, since prior testing in March 2020. Chrome appears to have <i>regressed</i>. See historical data further below or in <a href="slnt-ital-tests/index.html">the original testing page</a>.</li>
+				<li>The CSS Level 4 spec is unclear what should be done for the value <code>font-style: oblique ±XXdeg</code> in a variable font which only has an <code>ital</code> axis or a <code>slnt</code> axis that doesn’t include the requested value. As of these tests, Firefox applies a synthetic slant, while Safari & Chrome apply no slant. And thus, this test is rated as 🤷 for all three browsers. (Author’s loosely-held opinion: it is probably better to not add synthetic slant here, as this can be especially problematic in scripts other than Latin. Perhaps, oblique with a given slant should engage <code>'ital' 1</code>. If a user really wants a syntethic slant, they could use <code>transform: skew(XXdeg)</code>.</li>
 			</ul>
 		</div>
 		<h3 class="table-label">Chrome – Canary, Version 107.0.5301.0 (x86_64)</h3>
