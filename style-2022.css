@@ -310,7 +310,11 @@ td, th {
 	vertical-align: middle;
 }
 
-.summary td, .summary th {
+details {
+  margin-bottom: 1.5rem;
+}
+
+summary td, summary th {
 	padding: .25rem 1rem;
 	vertical-align: middle;
 	text-align: center;
@@ -318,12 +322,12 @@ td, th {
 	box-sizing: border-box;
 }
 
-.summary code {
+summary code {
 	padding: 0;
 }
 
-.summary td:first-of-type,
-.summary th:first-of-type {
+summary td:first-of-type,
+summary th:first-of-type {
 	text-align: left;
 }
 

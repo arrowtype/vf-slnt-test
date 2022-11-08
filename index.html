@@ -150,14 +150,14 @@
               <td>
                 <code>font-style: oblique;</code>
                 <div class="note">
-                  "Selects a font that is labeled as an oblique face, or an italic face if one is not."
+                  "Selects a font that is labeled as an oblique face, or an italic face if one is not ...  The lack of an angle represents 14deg."
                   <a href="https://drafts.csswg.org/css-fonts-3/#font-style-prop">CSS&nbsp;fonts&nbsp;3</a>
                 </div>
               </td>
               <td>
                 <span class="slnt">
                   <div class="overlap">
-                    <span class="red" style="font-variation-settings: 'slnt' -15">varfont</span>
+                    <span class="red" style="font-variation-settings: 'slnt' -14">varfont</span>
                     <span class="blue" style="font-style: oblique">varfont</span>
                   </div>
                 </span>
@@ -173,7 +173,7 @@
               <td>
                 <span class="slnt_backslant">
                   <div class="overlap">
-                    <span class="red" style="font-variation-settings: 'slnt' -15">varfont</span>
+                    <span class="red" style="font-variation-settings: 'slnt' -14">varfont</span>
                     <span class="blue" style="font-style: oblique">varfont</span>
                   </div>
                 </span>
@@ -286,16 +286,19 @@
 
 	<section>
 		<div class="centered-col">
-			<h2 >Browser testing results, as of September 14, 2022</h2>
+			<h2>Browser testing results, as of November 8, 2022</h2>
 
 			<p>Notes:</p>
 			<ul>
-				<li>The following tests were performed on a 2019 MacBook Pro, with an Intel chip and macOS 12.5, if that is relevant.</li>
-				<li>Safari and Firefox have seemingly not changed support here, since prior testing in March 2020. Chrome appears to have <i>regressed</i>. See historical data further below or in <a href="slnt-ital-tests/index.html">the original testing page</a>.</li>
+				<li>The following tests were performed on a 2019 MacBook Pro, with an Intel chip and macOS 12.5 (Monterey), if that is relevant.</li>
+				<li>Chrome has significantly improved in this testing, from previous rounds.</li>
+				<li>Safari has improved on one test, <code>font-style: oblique -10deg;</code>.</li>
+				<li>Firefox has seemingly not changed support here, but they were already ahead of the curve for support.</li>
+				<li>See historical data further below or in <a href="slnt-ital-tests/index.html">the original testing page</a>.</li>
 				<li>The CSS Level 4 spec is unclear what should be done for the value <code>font-style: oblique ±XXdeg</code> in a variable font which only has an <code>ital</code> axis or a <code>slnt</code> axis that doesn’t include the requested value. As of these tests, Firefox applies a synthetic slant, while Safari & Chrome apply no slant. And thus, this test is rated as 🤷 for all three browsers. (Author’s loosely-held opinion: it is probably better to not add synthetic slant here, as this can be especially problematic in scripts other than Latin. Perhaps, oblique with a given slant should engage <code>'ital' 1</code>. If a user really wants a syntethic slant, they could use <code>transform: skew(XXdeg)</code>.</li>
 			</ul>
 		</div>
-		<h3 class="table-label">Chrome – Canary, Version 107.0.5301.0 (x86_64)</h3>
+		<h3 class="table-label">Chrome – Canary, Version 109.0.5408.0 (x86_64)</h3>
 		<div class="table-box">
 			<table class="summary">
 				<tr>
@@ -323,13 +326,13 @@
 				  <code>font-style: italic;</code>
 				</td>
 				<td>
-					<p>❌</p>
+					<p>✅</p>
 				</td>
 				<td class="ital">
 					<p>❌</p>
 				</td>
 				<td>
-					<p>❌</p>
+					<p>✅</p>
 				</td>
 			  </tr>
 			  <tr>
@@ -337,13 +340,13 @@
 				  <code>font-style: oblique;</code>
 				</td>
 				<td>
-					<p>❌</p>
+					<p>✅</p>
 				</td>
 				<td class="ital">
 					<p>❌</p>
 				</td>
 				<td>
-					<p>❌</p>
+					<p>✅</p>
 				</td>
 			  </tr>
 			  <tr>
@@ -365,13 +368,13 @@
 				  <p><code>&lt;i&gt;</code> HTML element</p>
 				</td>
 				<td>
-					<p>❌</p>
+					<p>✅</p>
 				</td>
 				<td class="ital">
 					<p>❌</p>
 				</td>
 				<td>
-					<p>❌</p>
+					<p>✅</p>
 				</td>
 			  </tr>
 			  <tr>
@@ -391,7 +394,7 @@
 			</table>
 		</div>
 		
-		<h3 class="table-label">Safari – Technology Preview, Release 149 (Safari 16.0, WebKit 17614.1.19.1.5)</h3>
+		<h3 class="table-label">Safari – Technology Preview, Release 157 (Safari 16.4, WebKit 17615.1.11.7)</h3>
 		<div class="table-box">
 		<table class="summary">
 			<tr>
@@ -475,7 +478,7 @@
 			  <code>font-style: oblique -10deg;</code>
 			</td>
 			<td>
-				<p>❌</p>
+				<p>✅</p>
 			</td>
 			<td class="ital">
 				<p>🤷</p>
@@ -487,7 +490,7 @@
 		</table>
 		</div>
 
-		<h3 class="table-label">Firefox – Nightly, 106.0a1 (2022-09-14)</h3>
+		<h3 class="table-label">Firefox – Nightly, 108.0a1 (2022-11-03)</h3>
 		<div class="table-box">
 			<table class="summary">
 				<tr>
@@ -588,6 +591,306 @@
 
 	<section>
 		<h2 class="centered-col">Historical browser results</h2>
+		<details>
+			<summary class="centered-col"><b><!-------->Historical results as of September 14, 2022<!--------></b> (Click to expand)</summary>
+			
+			<div class="centered-col">
+				<p>Notes as of testing time:</p>
+				<ul>
+					<li>The following tests were performed on a 2019 MacBook Pro, with an Intel chip and macOS 12.5, if that is relevant.</li>
+					<li>Safari and Firefox have seemingly not changed support here, since prior testing in March 2020. Chrome appears to have <i>regressed</i>. See historical data further below or in <a href="slnt-ital-tests/index.html">the original testing page</a>.</li>
+					<li>The CSS Level 4 spec is unclear what should be done for the value <code>font-style: oblique ±XXdeg</code> in a variable font which only has an <code>ital</code> axis or a <code>slnt</code> axis that doesn’t include the requested value. As of these tests, Firefox applies a synthetic slant, while Safari & Chrome apply no slant. And thus, this test is rated as 🤷 for all three browsers. (Author’s loosely-held opinion: it is probably better to not add synthetic slant here, as this can be especially problematic in scripts other than Latin. Perhaps, oblique with a given slant should engage <code>'ital' 1</code>. If a user really wants a syntethic slant, they could use <code>transform: skew(XXdeg)</code>.</li>
+				</ul>
+			</div>
+			<h3 class="table-label">Chrome – Canary, Version 107.0.5301.0 (x86_64)</h3>
+			<div class="table-box">
+				<table class="summary">
+					<tr>
+					<th>Style Tested</th>
+					<th>Font with <code>slnt</code>, 0 to -15</th>
+					<th>Font with <code>ital</code>, 0 to 1</th>
+					<th>Font with <code>slnt</code>, 15 to -15</th>
+				  </tr>
+				  <tr>
+					<td>
+					  <code>font-variation-settings</code>
+					</td>
+					<td>
+						<p>✅</p>
+					</td>
+					<td class="ital">
+						<p>✅</p>
+					</td>
+					<td>
+						<p>✅</p>
+					</td>
+				  </tr>
+				  <tr>
+					<td>
+					  <code>font-style: italic;</code>
+					</td>
+					<td>
+						<p>❌</p>
+					</td>
+					<td class="ital">
+						<p>❌</p>
+					</td>
+					<td>
+						<p>❌</p>
+					</td>
+				  </tr>
+				  <tr>
+					<td>
+					  <code>font-style: oblique;</code>
+					</td>
+					<td>
+						<p>❌</p>
+					</td>
+					<td class="ital">
+						<p>❌</p>
+					</td>
+					<td>
+						<p>❌</p>
+					</td>
+				  </tr>
+				  <tr>
+					<td>
+					  <code>font-style: oblique 10deg;</code>
+					</td>
+					<td>
+						<p>✅</p>
+					</td>
+					<td class="ital">
+						<p>🤷</p>
+					</td>
+					<td>
+						<p>✅</p>
+					</td>
+				  </tr>
+				  <tr>
+					<td>
+					  <p><code>&lt;i&gt;</code> HTML element</p>
+					</td>
+					<td>
+						<p>❌</p>
+					</td>
+					<td class="ital">
+						<p>❌</p>
+					</td>
+					<td>
+						<p>❌</p>
+					</td>
+				  </tr>
+				  <tr>
+					<td>
+					  <code>font-style: oblique -10deg;</code>
+					</td>
+					<td>
+						<p>✅</p>
+					</td>
+					<td class="ital">
+						<p>🤷</p>
+					</td>
+					<td>
+						<p>✅</p>
+					</td>
+				  </tr>
+				</table>
+			</div>
+			
+			<h3 class="table-label">Safari – Technology Preview, Release 149 (Safari 16.0, WebKit 17614.1.19.1.5)</h3>
+			<div class="table-box">
+			<table class="summary">
+				<tr>
+				<th>Style Tested</th>
+				<th>Font with <code>slnt</code>, 0 to -15</th>
+				<th>Font with <code>ital</code>, 0 to 1</th>
+				<th>Font with <code>slnt</code>, 15 to -15</th>
+			  </tr>
+			  <tr>
+				<td>
+				  <code>font-variation-settings</code>
+				</td>
+				<td>
+					<p>✅</p>
+				</td>
+				<td class="ital">
+					<p>✅</p>
+				</td>
+				<td>
+					<p>✅</p>
+				</td>
+			  </tr>
+			  <tr>
+				<td>
+				  <code>font-style: italic;</code>
+				</td>
+				<td>
+					<p>❌</p>
+				</td>
+				<td class="ital">
+					<p>❌</p>
+				</td>
+				<td>
+					<p>❌</p>
+				</td>
+			  </tr>
+			  <tr>
+				<td>
+				  <code>font-style: oblique;</code>
+				</td>
+				<td>
+					<p>❌</p>
+				</td>
+				<td class="ital">
+					<p>❌</p>
+				</td>
+				<td>
+					<p>❌</p>
+				</td>
+			  </tr>
+			  <tr>
+				<td>
+				  <code>font-style: oblique 10deg;</code>
+				</td>
+				<td>
+					<p>❌</p>
+				</td>
+				<td class="ital">
+					<p>🤷</p>
+				</td>
+				<td>
+					<p>❌</p>
+				</td>
+			  </tr>
+			  <tr>
+				<td>
+				  <p><code>&lt;i&gt;</code> HTML element</p>
+				</td>
+				<td>
+					<p>❌</p>
+				</td>
+				<td class="ital">
+					<p>❌</p>
+				</td>
+				<td>
+					<p>❌</p>
+				</td>
+			  </tr>
+			  <tr>
+				<td>
+				  <code>font-style: oblique -10deg;</code>
+				</td>
+				<td>
+					<p>❌</p>
+				</td>
+				<td class="ital">
+					<p>🤷</p>
+				</td>
+				<td>
+					<p>❌</p>
+				</td>
+			  </tr>
+			</table>
+			</div>
+	
+			<h3 class="table-label">Firefox – Nightly, 106.0a1 (2022-09-14)</h3>
+			<div class="table-box">
+				<table class="summary">
+					<tr>
+					<th>Style Tested</th>
+					<th>Font with <code>slnt</code>, 0 to -15</th>
+					<th>Font with <code>ital</code>, 0 to 1</th>
+					<th>Font with <code>slnt</code>, 15 to -15</th>
+				  </tr>
+				  <tr>
+					<td>
+					  <code>font-variation-settings</code>
+					</td>
+					<td>
+						<p>✅</p>
+					</td>
+					<td class="ital">
+						<p>✅</p>
+					</td>
+					<td>
+						<p>✅</p>
+					</td>
+				  </tr>
+				  <tr>
+					<td>
+					  <code>font-style: italic;</code>
+					</td>
+					<td>
+						<p>✅</p>
+					</td>
+					<td class="ital">
+						<p>✅</p>
+					</td>
+					<td>
+						<p>✅</p>
+					</td>
+				  </tr>
+				  <tr>
+					<td>
+					  <code>font-style: oblique;</code>
+					</td>
+					<td>
+						<p>✅</p>
+					</td>
+					<td class="ital">
+						<p>❌</p>
+					</td>
+					<td>
+						<p>✅</p>
+					</td>
+				  </tr>
+				  <tr>
+					<td>
+					  <code>font-style: oblique 10deg;</code>
+					</td>
+					<td>
+						<p>✅</p>
+					</td>
+					<td class="ital">
+						<p>🤷</p>
+					</td>
+					<td>
+						<p>✅</p>
+					</td>
+				  </tr>
+				  <tr>
+					<td>
+					  <p><code>&lt;i&gt;</code> HTML element</p>
+					</td>
+					<td>
+						<p>✅</p>
+					</td>
+					<td class="ital">
+						<p>✅</p>
+					</td>
+					<td>
+						<p>✅</p>
+					</td>
+				  </tr>
+				  <tr>
+					<td>
+					  <code>font-style: oblique -10deg;</code>
+					</td>
+					<td>
+						<p>✅</p>
+					</td>
+					<td class="ital">
+						<p>🤷</p>
+					</td>
+					<td>
+						<p>✅</p>
+					</td>
+				  </tr>
+				</table>
+			</div>
+	
+		</details>
 		<details>
 			<summary class="centered-col"><b><!-------->Historical results as of March 24, 2020<!--------></b> (Click to expand)</summary>
 			
