@@ -1,6 +1,7 @@
 @font-face {
 	font-family: 'Inter1';
 	font-style: oblique 0deg 15deg;
+	font-weight: 100 900;
 	src: url('fonts/Inter.var.woff2');
 }
 @font-face {
